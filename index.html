@@ -24,6 +24,9 @@ h1{font-size:clamp(40px,6.2vw,86px)}h2{font-size:clamp(32px,4.6vw,62px)}h3{font-
 .tag{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);display:inline-flex;gap:10px;align-items:center;margin-bottom:22px}
 .tag::before{content:"";width:22px;height:1px;background:var(--lime)}
 p.lede{color:var(--mut);font-size:19px;max-width:620px}
+p.lede strong{font-weight:700}
+p.lede .hl{color:var(--lime)}
+p.lede .hw{color:var(--tx)}
 .btn{display:inline-flex;align-items:center;gap:14px;background:var(--lime);color:#0c1110;font-weight:700;border-radius:999px;padding:8px 8px 8px 28px;font-size:16px;transition:.3s;border:0}
 .btn i{width:44px;height:44px;border-radius:50%;background:#0c1110;color:var(--lime);display:grid;place-items:center;font-style:normal;transition:.3s;flex:none}
 .btn:hover{box-shadow:0 0 0 6px #c8f54233;transform:translateY(-2px)}.btn:hover i{transform:rotate(-45deg)}
@@ -90,8 +93,8 @@ section{padding:96px 0}
 .mirror p{color:#38443f;font-size:19px}.mirror p+p{margin-top:18px}
 .mirror strong{color:#0c1110}
 .q{margin-top:60px;font-size:clamp(24px,3vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1.15;max-width:960px}
-.big{font-size:clamp(70px,13vw,190px);font-weight:800;letter-spacing:-.06em;line-height:.9;margin-top:36px}
-.big span{color:#3c7a00}
+.existe{font-size:clamp(70px,13vw,190px);font-weight:800;letter-spacing:-.06em;line-height:.9;margin-top:36px}
+.existe span{color:#3c7a00}
 .mirror .close{font-size:22px;margin-top:14px;color:#0c1110;font-weight:600;max-width:820px}
 .trust{margin-top:34px;font-size:19px;max-width:820px;border-left:3px solid #3c7a00;padding-left:18px;color:#0c1110!important}
 .proof{margin-top:48px;display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:center;background:#0c1110;color:var(--tx);border-radius:28px;padding:22px}
@@ -218,7 +221,11 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .it.main{background:linear-gradient(145deg,#c8f54226,var(--card) 60%)}
 .it small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);grid-column:1/-1}
 .it h3{font-size:21px;line-height:1.15}
-.it .v{font-family:var(--mono);font-size:14px;color:var(--mut);text-decoration:line-through;white-space:nowrap;align-self:start}
+.it .v{font-family:var(--sans);font-size:clamp(19px,2.4vw,24px);font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--tx);white-space:nowrap;align-self:start;transition:color .4s}
+.it .v u{text-decoration:none;background-image:linear-gradient(#ff5a4f,#ff5a4f);background-repeat:no-repeat;background-position:0 56%;background-size:0% 3px;transition:background-size .55s cubic-bezier(.6,0,.2,1)}
+.it.cut-v .v{color:#c4cfc8}
+.it.cut-v .v u{background-size:100% 3px}
+@media(prefers-reduced-motion:reduce){.it .v u{background-size:100% 3px}}
 .it p{grid-column:1/-1;color:var(--mut);font-size:15.5px}.it p em{font-style:normal;color:var(--tx)}
 .pricecard{position:sticky;top:96px;background:var(--tx);color:#0c1110;border-radius:32px;padding:34px;overflow:hidden}
 .pc-top{padding-bottom:26px;border-bottom:2px dashed #c0c9bd;position:relative}
@@ -292,6 +299,133 @@ footer .law{font-size:12.5px;max-width:860px;line-height:1.6;border-top:1px soli
 .rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
 :focus-visible{outline:2px solid var(--lime);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+/* ===== A REALIDADE: leitura em cenas ===== */
+.mirror .rl-head{margin-bottom:34px;max-width:900px}
+.scenes{margin:6px 0 60px;display:grid;gap:clamp(26px,5vw,46px);max-width:880px}
+.mirror .sc{margin:0;font-size:clamp(23px,3.2vw,38px);line-height:1.2;letter-spacing:-.03em;font-weight:600;color:#0c1110;opacity:.2;transform:translateX(-6px);transition:opacity .5s,transform .5s}
+.mirror .sc.seen{opacity:.5;transform:none}
+.mirror .sc.on{opacity:1;transform:none}
+.mirror mark{background:linear-gradient(transparent 58%,#c8f542 58%);color:inherit;padding:0 .08em}
+.mirror .sc b{font-weight:800}
+.chk{margin:0 0 64px;background:#0c1110;color:var(--tx);border-radius:28px;padding:clamp(22px,4vw,40px);max-width:880px}
+.mirror .chk-k{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
+.chk h3{font-size:clamp(26px,3.4vw,40px);line-height:1.05}
+.chk-b{display:grid;gap:10px;margin-top:20px}
+.chk-b button{display:flex;gap:14px;align-items:center;text-align:left;width:100%;background:#161e1b;border:1px solid #26322e;border-radius:16px;padding:16px 18px;font-size:17px;font-weight:600;line-height:1.3;color:#eef2ea;transition:.25s}
+.chk-b button:hover{border-color:var(--lime2)}
+.chk-b button i{flex:none;width:26px;height:26px;border-radius:50%;border:2px solid #4a5a54;display:grid;place-items:center;font-style:normal;color:transparent;font-size:14px;font-weight:800;transition:.25s}
+.chk-b button[aria-pressed=true]{background:var(--lime);color:#0c1110;border-color:var(--lime);transform:scale(1.015)}
+.chk-b button[aria-pressed=true] i{background:#0c1110;border-color:#0c1110;color:var(--lime)}
+.mirror .chk-r{margin-top:18px;font-family:var(--mono);font-size:13px;line-height:1.5;color:#93a39b;min-height:2.6em}
+.mirror .chk-r.hit{color:var(--lime)}
+.cut{margin:0 0 70px;max-width:900px}
+.mirror .cut-t{font-size:clamp(22px,2.8vw,32px);font-weight:600;letter-spacing:-.03em;line-height:1.15;color:#0c1110;margin-bottom:20px}
+.cut-l{display:flex;flex-wrap:wrap;gap:10px}
+.cut-l span{position:relative;border:1px solid #b9c4b5;border-radius:999px;padding:9px 16px;font-size:16px;line-height:1.3;color:#38443f;background:#ffffffb0;transition:color .35s}
+.cut-l u{text-decoration:none;background-image:linear-gradient(#d6453d,#d6453d);background-repeat:no-repeat;background-position:0 62%;background-size:0% 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .45s cubic-bezier(.6,0,.2,1)}
+.cut-l span.x{color:#7b867f}
+.cut-l span.x u{background-size:100% 2px}
+.then{margin:0 0 70px;max-width:980px}
+.mirror .then-q{font-size:clamp(30px,4.4vw,54px);font-weight:800;letter-spacing:-.045em;line-height:1;color:#0c1110}
+.then-g{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin:24px 0}
+.then-c{background:#ffffffc0;border:1px solid #cfd8cb;border-radius:20px;padding:20px 22px}
+.then-c small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#3c5a00}
+.then-c ul{list-style:none;padding:0;margin-top:10px;display:grid;gap:6px;font-weight:600;font-size:17px;color:#0c1110;line-height:1.3}
+.then-c.now{background:#0c1110;border-color:#0c1110}
+.then-c.now small{color:var(--lime)}.then-c.now ul{color:#eef2ea}
+.then-c.now li{opacity:0;transform:translateY(8px);transition:opacity .5s calc(.45s + var(--i,0)*.22s),transform .5s calc(.45s + var(--i,0)*.22s)}
+.then.in .then-c.now li{opacity:1;transform:none}
+.then-eq{font-size:38px;font-weight:800;color:#3c7a00;line-height:1}
+.mirror .then-p{font-size:clamp(19px,2.2vw,24px);line-height:1.35;color:#0c1110;font-weight:500;max-width:760px}
+.mech{margin:0 0 20px;max-width:900px}
+.mirror .mech-k{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:#3c5a00;font-weight:600}
+.mirror .mech-h{font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-.045em;line-height:1.04;color:#0c1110;margin:12px 0 18px}
+.mirror .mech-s{font-size:19px;line-height:1.55}
+.mech-v{margin:26px 0;display:grid;gap:16px;background:#ffffffc0;border:1px solid #cfd8cb;border-radius:22px;padding:22px;position:relative}
+.bar-row{display:grid;gap:8px}
+.bar-lbl{font-size:13px;font-family:var(--mono);color:#38443f;line-height:1.35}
+.bar{height:20px;border-radius:99px;background:#e1e7dd;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:99px;background:#0c1110;transition:width 1.3s cubic-bezier(.2,.8,.2,1) .25s}
+.bar.big i{background:linear-gradient(90deg,#a6d62a,#c8f542);transition-delay:.9s}
+.mech.in .bar i{width:var(--w)}
+.mech-n{justify-self:end;font-size:10.5px;font-family:var(--mono);color:#7b867f;letter-spacing:.06em;text-transform:uppercase}
+.mirror .mech-c{font-size:clamp(20px,2.4vw,27px);font-weight:700;letter-spacing:-.02em;line-height:1.3;color:#0c1110;border-left:3px solid #3c7a00;padding-left:16px}
+@media(max-width:700px){.then-g{grid-template-columns:1fr;gap:8px}.then-eq{text-align:center;font-size:30px}}
+@media(prefers-reduced-motion:reduce){.mirror .sc{opacity:1;transform:none}.cut-l u{background-size:100% 2px}.then-c.now li{opacity:1;transform:none}.bar i{width:var(--w)}}
+/* ===== AULAS: indicação de deslizar + setas ===== */
+.stage>.mods-w{min-width:0}
+.mods-ctl{display:flex;align-items:center;gap:12px;margin-top:14px}
+.mods-ctl .mc{flex:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--lime2);background:none;font-size:19px;color:var(--tx);transition:.25s}
+.mods-ctl .mc:not(:disabled):hover{background:var(--lime);color:#0c1110;border-color:var(--lime)}
+.mods-ctl .mc:disabled{opacity:.3;border-color:var(--line);cursor:default}
+.mods-ctl .mc.hint{animation:mcpulse 1.9s infinite}
+@keyframes mcpulse{0%{box-shadow:0 0 0 0 #c8f54266}70%,100%{box-shadow:0 0 0 12px #c8f54200}}
+.mods-ctl .mc-t{flex:1;font-size:12.5px;line-height:1.4;color:var(--mut);font-family:var(--mono);text-align:center}
+.mods-ctl .mc-c{display:block;color:var(--lime);font-size:12px;margin-bottom:3px}
+/* ===== DEPOIMENTOS: controles ===== */
+.rail-ctl{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+.rail-ctl .mc{flex:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--lime2);background:none;font-size:19px;color:var(--tx);transition:.25s}
+.rail-ctl .mc:not(:disabled):hover{background:var(--lime);color:#0c1110;border-color:var(--lime)}
+.rail-ctl .mc:disabled{opacity:.3;border-color:var(--line);cursor:default}
+.rail-ctl .mc.hint{animation:mcpulse 1.9s infinite}
+.rail-ctl .mc-t{flex:1;font-size:12.5px;line-height:1.4;color:var(--mut);font-family:var(--mono);text-align:center}
+.rail-ctl .mc-c{display:block;color:var(--lime);font-size:12px;margin-bottom:3px}
+/* ===== CARTÃO DE PREÇO (novo, foco em conversão) ===== */
+.pricecard{background:linear-gradient(180deg,#1c2821 0%,#121917 70%);color:var(--tx);border:1px solid var(--lime2);box-shadow:0 0 0 1px #c8f54222,0 26px 70px #000b,0 0 90px #c8f54216;padding:clamp(20px,3vw,32px);border-radius:28px;overflow:visible}
+.pk-k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.pk-was{margin-top:14px;display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline;font-size:14.5px;line-height:1.3;color:var(--mut)}
+.pk-old{font-size:24px;font-weight:800;color:var(--tx);letter-spacing:-.02em;line-height:1.1}
+.pk-old u{text-decoration:none;background-image:linear-gradient(#ff5a4f,#ff5a4f);background-repeat:no-repeat;background-position:0 56%;background-size:0% 3px;transition:background-size .55s cubic-bezier(.6,0,.2,1)}
+.pricecard.cut-v .pk-old u{background-size:100% 3px}
+.pk-now{display:flex;align-items:flex-end;gap:10px;margin-top:4px;line-height:.9}
+.pk-cur{font-size:30px;font-weight:800;color:var(--lime);padding-bottom:14px}
+.pk-num{font-size:clamp(104px,30vw,148px);font-weight:800;letter-spacing:-.06em;color:var(--lime);text-shadow:0 0 56px #c8f54240}
+.pk-sub{font-size:15px;line-height:1.25;padding-bottom:16px;color:var(--mut)}
+.pk-sub strong{display:block;color:var(--tx);font-size:20px;letter-spacing:-.02em}
+.pk-par{font-size:17px;color:var(--tx);margin-top:6px}.pk-par strong{font-weight:700}
+.pk-save{display:inline-flex;gap:6px;margin-top:12px;background:#c8f54220;border:1px solid #c8f54255;color:var(--lime);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600}
+.pk-save b{font-weight:800}
+.pricecard .btn.full{margin-top:20px}
+.pk-micro{text-align:center;color:var(--mut);margin-top:12px}
+.pricecard .urg{margin:18px 0 0;border:1px solid var(--line)}
+.offer-r .bal{margin-top:16px;font-size:13.5px;line-height:1.55;color:var(--mut);padding:0 6px}
+.offer-r .bal strong{color:var(--tx)}
+.offer-r .bal small{display:block;font-size:11.5px;margin-top:6px;opacity:.8}
+.offer-r{position:sticky;top:96px}
+.pricecard{position:relative;top:auto}
+@media(max-width:960px){.offer-r{position:relative;top:0}}
+@media(prefers-reduced-motion:reduce){.pk-old u{background-size:100% 3px}}
+.sec-final{padding-top:96px}
+.mirror .close.leadin{margin-top:26px;font-size:clamp(19px,2.4vw,24px);font-weight:500;line-height:1.35;max-width:760px}
+.mirror .close.leadin strong{font-weight:800;background:linear-gradient(transparent 58%,#c8f542 58%)}
+.leadin .dn{display:inline-block;font-weight:800;color:#3c7a00;animation:dnb 1.4s ease-in-out infinite}
+@keyframes dnb{50%{transform:translateY(5px)}}
+.proof .thumb .pl{animation:mcpulse 1.9s infinite}
+@media(prefers-reduced-motion:reduce){.leadin .dn,.proof .thumb .pl{animation:none}}
+/* ===== VÍDEO NO PRÓPRIO LUGAR ===== */
+.vplayer{position:relative;width:100%;background:#000;aspect-ratio:9/12;overflow:hidden}
+.vplayer iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.vplayer .vstop{position:absolute;top:10px;right:10px;z-index:3;width:36px;height:36px;border-radius:50%;background:#000c;color:#fff;border:1px solid #ffffff66;font-size:22px;line-height:1;display:grid;place-items:center;cursor:pointer;padding:0}
+.vplayer .vstop:hover{background:var(--lime);color:#0c1110}
+.proof .vplayer.pr{aspect-ratio:3/4;border-radius:18px}
+/* ===== DATA DE HOJE (muda sozinha todo dia) ===== */
+.urg-date{display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:var(--lime);color:#0c1110;border-radius:999px;padding:6px 14px 6px 12px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;line-height:1.2}
+.urg-date::before{content:"";width:8px;height:8px;border-radius:50%;background:#0c1110;flex:none;animation:bl 1.4s infinite}
+.urg-date:empty{display:none}
+.final .urg-date{margin-top:14px}
+.ts:empty,.ps-d:empty{display:none}
+.ts{font-style:normal;margin-left:6px;color:var(--lime)}
+.ps-d{margin-left:6px;color:var(--lime);font-family:var(--mono);font-size:.95em}
+@media(prefers-reduced-motion:reduce){.urg-date::before{animation:none}}
+/* ===== URGÊNCIA: uma linha só + destaques ===== */
+.urg b>span{display:block}
+.urg .ud{font-style:normal;color:var(--lime);display:inline-block;white-space:nowrap;margin-left:4px}
+.urg .ud:not(:empty)::before{content:"· ";color:var(--lime)}
+@media(max-width:600px){.urg .ud{display:block;margin-left:0}.urg .ud:not(:empty)::before{content:none}}
+.urg strong.hl-n,.urg strong.hl-p{display:inline}
+.urg .hl-n{font-family:var(--sans);font-size:15px;font-weight:800;color:var(--lime);letter-spacing:-.01em}
+.urg .hl-p{font-family:var(--sans);font-size:15px;font-weight:800;color:var(--tx);background:linear-gradient(transparent 60%,#ff5a4f66 60%);padding:0 3px;border-radius:2px}
+.urg small{line-height:1.7}
 /* ===== AJUSTES MOBILE ===== */
 html{-webkit-text-size-adjust:100%}
 .dock{bottom:calc(14px + env(safe-area-inset-bottom,0px))}
@@ -310,7 +444,8 @@ html{-webkit-text-size-adjust:100%}
   nav.top .w{padding:6px 6px 6px 14px}
   /* hero */
   .hero{padding:96px 0 44px}
-  .hero p.lede{margin:20px 0 26px}
+  .hero p.lede{margin:12px 0 22px}
+  .hero .micro{margin-top:22px}
   .btn{font-size:15px;padding:6px 6px 6px 22px;gap:10px}
   .btn i{width:40px;height:40px}
   .btn.big{font-size:16px;padding:7px 7px 7px 22px}.btn.big i{width:46px;height:46px}
@@ -330,7 +465,7 @@ html{-webkit-text-size-adjust:100%}
   .mirror p{font-size:17px}.mirror p+p{margin-top:14px}
   .mirror-g{gap:22px}
   .q{margin-top:40px}
-  .big{margin-top:24px}
+  .existe{margin-top:24px}
   .mirror .close{font-size:18px}
   .trust{font-size:17px!important}
   .proof{padding:14px;gap:16px;border-radius:22px;margin-top:34px}
@@ -384,7 +519,74 @@ html{-webkit-text-size-adjust:100%}
   .faq p{padding:0 0 22px 0;font-size:16px}
   .ps{padding:22px;border-radius:22px;margin-top:36px}.ps p{font-size:16px}.ps .btn{width:100%;justify-content:space-between}
   footer{padding:36px 0 110px}
+  /* depoimentos: o cartão inteiro (vídeo + texto) e as setas cabem na tela */
+  .rail{gap:12px;padding-bottom:4px;scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  .vid{flex:0 0 74vw}
+  .vid .thumb{aspect-ratio:1/.98}
+  .vid .thumb img{object-position:50% 22%}
+  .vid .n{top:12px;left:12px}.vid .thumb .pl{top:12px;right:12px;width:44px;height:44px}
+  .vid .cap{left:14px;right:14px;bottom:14px}
+  .vid .cap h3{font-size:16.5px;margin-top:4px}
+  .vid p{padding:12px 16px 16px;font-size:13.5px;line-height:1.5}
+  .rail-ctl{margin-top:12px}
+  .vid .vplayer{aspect-ratio:1/.98}
+  .proof .vplayer.pr{aspect-ratio:9/16;height:auto;width:min(100%,208px);margin-inline:auto;border-radius:14px}
+  .pricecard{padding:18px 16px 16px;border-radius:24px}
+  .pk-was{margin-top:8px}.pk-old{font-size:21px}
+  .pk-cur{font-size:24px;padding-bottom:10px}
+  .pk-num{font-size:clamp(88px,28vw,112px)}
+  .pk-sub{padding-bottom:10px;font-size:14px}.pk-sub strong{font-size:18px}
+  .pk-par{font-size:15.5px;margin-top:4px}
+  .pk-save{font-size:12.5px;padding:5px 12px;margin-top:8px}
+  .pricecard .btn.full{margin-top:14px}
+  .pk-micro{margin-top:8px;font-size:10.5px;letter-spacing:0}
+  .pricecard .urg{margin-top:12px;padding:12px 14px}
+  .pricecard .urg b{font-size:14px}
+  .pricecard .urg small{font-size:10.5px}
+  .offer-r .bal{font-size:13px;margin-top:14px}
+  #produto{padding-bottom:30px}
+  #benhur{padding-top:30px}
   .dock .btn{font-size:15px}
+}
+@media(max-width:600px){
+  .scenes{margin:0 0 40px;gap:24px}
+  .mirror .sc{font-size:23px}
+  .chk{margin-bottom:44px;border-radius:22px;padding:22px 18px}
+  .chk-b button{padding:14px;font-size:16px}
+  .cut{margin-bottom:48px}.cut-l span{font-size:14.5px;padding:8px 13px}
+  .then{margin-bottom:48px}
+  .then-c{padding:16px 18px}
+  .mirror .mech-s{font-size:17px}
+  .mech-v{padding:18px 16px;gap:14px}
+  .mirror .mech-c{font-size:19px}
+}
+/* ===== MOBILE: sem espaços vazios ===== */
+@media(max-width:600px){
+  section{padding:34px 0}
+  .hero{padding-bottom:30px}
+  .hero-g{gap:26px}
+  .stats{padding:24px 0 26px}
+  .sec-final{padding:22px 0 18px}
+  .final{padding:34px 18px 30px}
+  #faq{padding-top:24px}
+  #resultados{padding-top:12px}
+  footer{padding:20px 0 100px}
+  .mirror .rl-head{margin-bottom:20px}
+  .scenes{margin-bottom:28px}
+  .chk{margin-bottom:32px}
+  .cut{margin-bottom:32px}
+  .then{margin-bottom:32px}
+  .q{margin-top:28px}
+  .big{margin-top:20px}
+  .proof{margin-top:28px}
+  .bridge{margin-top:24px}
+  .head{margin-bottom:24px}
+  .buyers{margin-top:32px}
+  .sim{margin-top:28px}
+  .know{margin-top:30px}
+  .stage{padding:22px 0}
+  section p.c.rv{margin-top:24px!important}
 }
 @media(max-width:360px){
   h1{font-size:32px}
@@ -409,7 +611,7 @@ html{-webkit-text-size-adjust:100%}
   <div>
     <p class="tag">GPS do Corretor de Grãos</p>
     <h1>Domine a corretagem de grãos e crie uma <span class="serif">nova fonte de renda</span> no agronegócio</h1>
-    <p class="lede">A profissão que permite ganhar comissões de 10 a 30 mil por mês dentro do mercado que você já conhece, sem capital próprio e sem deixar o que você faz hoje.</p>
+    <p class="lede">A profissão que permite ganhar comissões de <strong class="hl">10 a 30 mil por mês</strong> dentro do mercado que você já conhece, <strong class="hw">sem capital próprio e sem deixar o que você faz hoje.</strong></p>
     <div class="acts"><a class="btn big cta" href="#">Quero meu acesso agora<i>→</i></a></div>
     <p class="micro">Acesso imediato · Pagamento seguro · 7 dias de garantia</p>
     <div class="chips"><span><b>Acesso</b> imediato</span><span>Sem capital próprio</span><span>Sem largar o que você faz</span><span><b>7 dias</b> de garantia</span></div>
@@ -418,7 +620,7 @@ html{-webkit-text-size-adjust:100%}
     <img width="1080" height="1080" fetchpriority="high" decoding="async" src="https://sala.benhurcorretordegraos.com.br/_next/image?url=%2Fimages%2Fbenhur.webp&w=1080&q=75" alt="Benhur Willian, especialista em corretagem de grãos">
     <figcaption><small>Quem vai te mostrar o caminho</small><strong>Benhur Willian</strong><span class="s">Corretor de grãos há 11 anos</span></figcaption>
     <div class="float f1">Prática real<b>11 anos</b></div>
-    <div class="float f2">Corretores<b>+2.450</b></div>
+    <div class="float f2"><b>+2.450</b>alunos</div>
   </figure>
 </div></header>
 
@@ -432,18 +634,57 @@ html{-webkit-text-size-adjust:100%}
 
 <!-- DOBRA 2 -->
 <section class="mirror" id="realidade"><div class="w">
-  <div class="mirror-g rv"><div><p class="tag">A realidade</p><h2>Você vê o agro girando milhões na sua região. Mas <span class="serif">o seu bolso não sente isso.</span></h2></div>
-  <div><p>Você vê a safra saindo, os caminhões carregados, o dinheiro rodando bem ao seu lado todos os dias. Talvez você trabalhe dentro disso: agrônomo, classificador, vendedor de insumos, corretor de imóveis. Talvez trabalhe em outra área, mas vive perto desse mercado e sabe que ali tem oportunidade.</p>
-  <p>E mesmo assim, no fim do mês, a conta não acompanha o esforço. Você trabalha de segunda a segunda, depende de um salário com teto definido por outra pessoa ou só ganha mais se trabalhar mais horas.</p>
-  <p>Sobra pouco tempo pro que realmente importa: levar seu filho na escola, almoçar em casa, estar presente nas apresentações de escola, viajar com a família, ter um fim de semana tranquilo, poder levar sua família pra jantar em lugar bacana.</p></div></div>
-  <div class="mirror-g rv" style="margin-top:56px"><div><p style="font-size:clamp(24px,2.6vw,34px);font-weight:600;letter-spacing:-.03em;line-height:1.15;color:#0c1110">E se nada mudar? Daqui a 3 anos a história é a mesma: mesma renda, mesma correria, mesmo "ano que vem eu vejo isso".</p></div>
-  <div><p>O arrependimento que mais escuto dos alunos não é sobre dinheiro. É sobre o tempo que perderam enrolando pra começar.</p>
-  <p><strong>Agora presta atenção, porque quase ninguém te conta isso:</strong> você não ganha pouco por falta de esforço nem de competência. Você ganha pouco porque, na maioria das profissões, o que você recebe é proporcional ao tamanho do negócio em que você está diretamente envolvido. E a sua função, hoje, fica longe de onde o dinheiro grande realmente se move.</p>
-  <p>Na corretagem de grãos, um único negócio fechado movimenta milhões, e é em cima disso que sai a sua comissão.</p></div></div>
+  <div class="rl-head rv"><p class="tag">A realidade</p><h2>Você vê o agro girando milhões na sua região. Mas <span class="serif">o seu bolso não sente isso.</span></h2></div>
+
+  <div class="scenes" id="scenes">
+    <p class="sc">Você vê a safra saindo, os caminhões carregados, o dinheiro rodando <mark>bem ao seu lado</mark> todos os dias.</p>
+    <p class="sc">Talvez você trabalhe dentro disso: <b>agrônomo, classificador, vendedor de insumos, corretor de imóveis.</b></p>
+    <p class="sc">Talvez trabalhe em outra área, mas vive perto desse mercado e <mark>sabe que ali tem oportunidade.</mark></p>
+    <p class="sc">E mesmo assim, no fim do mês, <mark>a conta não acompanha o esforço.</mark></p>
+  </div>
+
+  <div class="chk rv" id="chk">
+    <p class="chk-k">Toque nas que são a sua realidade</p>
+    <h3>Quantas dessas você vive?</h3>
+    <div class="chk-b">
+      <button type="button" aria-pressed="false"><i>✓</i>Trabalho de segunda a segunda</button>
+      <button type="button" aria-pressed="false"><i>✓</i>Dependo de um salário com teto definido por outra pessoa</button>
+      <button type="button" aria-pressed="false"><i>✓</i>Só ganho mais se trabalhar mais horas</button>
+    </div>
+    <p class="chk-r" id="chk-r" aria-live="polite">Marque as que fazem parte da sua rotina.</p>
+  </div>
+
+  <div class="cut rv">
+    <p class="cut-t">Sobra pouco tempo pro que realmente importa:</p>
+    <div class="cut-l"><span><u>levar seu filho na escola</u></span><span><u>almoçar em casa</u></span><span><u>estar presente nas apresentações de escola</u></span><span><u>viajar com a família</u></span><span><u>ter um fim de semana tranquilo</u></span><span><u>poder levar sua família pra jantar em lugar bacana</u></span></div>
+  </div>
+
+  <div class="then rv">
+    <p class="then-q">E se nada mudar?</p>
+    <div class="then-g">
+      <div class="then-c"><small>HOJE</small><ul><li>mesma renda</li><li>mesma correria</li><li>"ano que vem eu vejo isso"</li></ul></div>
+      <div class="then-eq" aria-hidden="true">=</div>
+      <div class="then-c now"><small>DAQUI A 3 ANOS</small><ul><li style="--i:1">mesma renda</li><li style="--i:2">mesma correria</li><li style="--i:3">"ano que vem eu vejo isso"</li></ul></div>
+    </div>
+    <p class="then-p">Daqui a 3 anos a história é a mesma. O arrependimento que mais escuto dos alunos não é sobre dinheiro. É sobre <mark>o tempo que perderam enrolando pra começar.</mark></p>
+  </div>
+
+  <div class="mech rv">
+    <p class="mech-k">Agora presta atenção, porque quase ninguém te conta isso:</p>
+    <p class="mech-h">Você não ganha pouco por falta de esforço nem de competência.</p>
+    <p class="mech-s">Você ganha pouco porque, na maioria das profissões, o que você recebe é proporcional ao tamanho do negócio em que você está diretamente envolvido. E a sua função, hoje, fica longe de onde o dinheiro grande realmente se move.</p>
+    <div class="mech-v" aria-hidden="true">
+      <div class="bar-row"><span class="bar-lbl">O negócio em que você está envolvido hoje</span><div class="bar"><i style="--w:12%"></i></div></div>
+      <div class="bar-row"><span class="bar-lbl">Um negócio de grãos fechado</span><div class="bar big"><i style="--w:100%"></i></div></div>
+      <span class="mech-n">ilustração</span>
+    </div>
+    <p class="mech-c">Na corretagem de grãos, um único negócio fechado movimenta milhões, e é em cima disso que sai a sua comissão.</p>
+  </div>
   <p class="q rv">Será que existe uma forma de ganhar mais dentro desse mercado, sem precisar de capital e sem começar do zero em outra área?</p>
-  <div class="big rv">Existe<span>.</span></div>
+  <div class="existe rv">Existe<span>.</span></div>
   <p class="close rv">Conectando quem vende grão a quem compra e recebendo uma comissão por negócio fechado. Isso não acontece sozinho nem de um dia para o outro: exige aprender o método e se dedicar. Mas o que você precisa pra começar, você provavelmente já tem: uma região que produz, um telefone e a vontade de mudar de vida.</p>
   <p class="close trust rv">Eu sei o que você pode estar pensando: "mais um curso que promete e não entrega". Por isso aqui não tem milagre. Tem um passo a passo.</p>
+  <p class="close leadin rv">Não precisa acreditar só na minha palavra. <strong>Dá o play abaixo</strong> e veja com os seus próprios olhos o que esse mercado já fez por quem começou. <span class="dn" aria-hidden="true">↓</span></p>
   <div class="proof rv">
     <button class="thumb" data-v="y4wULmXWjvU" aria-label="Reproduzir depoimento do Givanildo"><img loading="lazy" decoding="async" width="360" height="480" alt="" src="https://sala.benhurcorretordegraos.com.br/images/y4wULmXWjvU.jpg"><span class="pl">▶</span></button>
     <div><small>Prova rápida · Givanildo</small><p>O Givanildo tinha uma empresa há 15 anos, com 5 funcionários, e estava insatisfeito com o que fazia. Entrou na corretagem de grãos, hoje não tem mais a empresa anterior e já recebeu R$&nbsp;43 mil de comissão em um único negócio.</p></div>
@@ -466,7 +707,7 @@ html{-webkit-text-size-adjust:100%}
     <div><h3>Quem compra <span class="serif">o grão?</span></h3>
     <p>Não é um mistério. Quem compra grão é gente que depende dele todo dia. Todos eles precisam de alguém que leve o grão até eles, com rapidez e no preço certo. <strong>Essa pessoa pode ser você.</strong></p>
     <p>No módulo 2 do GPS eu mostro onde encontrar esses compradores e os produtores, e como abordá-los.</p></div>
-    <div class="bl"><div>Cooperativas</div><div>Indústrias, como fábricas de ração e esmagadoras</div><div>Tradings e exportadoras</div><div>Armazéns e outros comerciantes de grãos</div></div>
+    <div class="bl"><div>Cooperativas</div><div>Indústrias, como fábricas de ração e esmagadoras</div><div>Tradings e exportadoras</div><div>Cerealistas, armazéns e outros comerciantes de grãos</div><div>Confinamentos e granjas</div></div>
   </div>
 
   <div class="two rv">
@@ -530,7 +771,7 @@ html{-webkit-text-size-adjust:100%}
       <p class="honest">O GPS te mostra o caminho. O resultado vem de você seguir esse caminho e colocar em prática.</p>
     </div>
   </div>
-  <p class="c rv" style="margin-top:44px;color:var(--mut);font-size:18px">E além das 12 aulas, você ainda leva 3 bônus que vão acelerar o seu começo. Veja logo abaixo.</p>
+  <p class="c rv" style="margin-top:44px;color:var(--mut);font-size:18px">E além das 12 aulas, você ainda leva 3 bônus que vão acelerar o seu começo. Mas antes de te mostrar tudo, deixa eu te contar quem eu sou.</p>
   <div class="c rv" style="margin-top:22px"><a class="btn cta" href="#">Quero meu acesso agora<i>→</i></a></div>
 </div></section>
 
@@ -556,7 +797,7 @@ html{-webkit-text-size-adjust:100%}
   <div class="head rv"><div><p class="tag">Resultados de quem decidiu agir</p><h2>Gente de áreas completamente diferentes. <span class="serif">O mesmo caminho.</span></h2></div>
   <p>Veja o que aconteceu com alunos que aplicaram o que eu ensino. Eles vieram de profissões diferentes, e muitos nunca tinham trabalhado com grãos. O método que esses alunos aplicaram é o mesmo que você aprende nas aulas do GPS.</p></div>
   <div class="rail" id="rail"></div>
-  <div class="rail-ctl"><button id="prev" aria-label="Anterior">←</button><button id="next" aria-label="Próximo">→</button></div>
+  <div class="rail-ctl"><button id="prev" class="mc" type="button" aria-label="Depoimento anterior">←</button><span class="mc-t"><b class="mc-c" id="rc"></b>Deslize para o lado ou toque nas setas para ver os outros alunos</span><button id="next" class="mc" type="button" aria-label="Próximo depoimento">→</button></div>
   <div class="common rv"><h3 style="font-size:clamp(28px,3.4vw,44px)">O que eles têm <span class="serif">em comum?</span></h3>
     <div><ul><li>Vieram de profissões diferentes: mecânico, faz-tudo, vendedora de carros, dono de PetShop, empresário.</li><li>Todos seguiram um passo a passo, em vez de tentar descobrir tudo sozinhos.</li><li>Todos colocaram o método em prática.</li></ul></div></div>
   <p class="note">Resultados individuais de alunos do Benhur. Não há garantia de ganho: os valores variam conforme a dedicação e a aplicação do método de cada pessoa.</p>
@@ -569,28 +810,31 @@ html{-webkit-text-size-adjust:100%}
   <div class="offer">
     <div>
       <div class="stack rv">
-        <div class="it main"><small>Produto principal</small><h3>GPS do Corretor de Grãos</h3><span class="v">R$ 297</span><p>As 12 aulas com o caminho completo da corretagem de grãos, na área de membros, com <em>acesso por 1 ano</em> e certificado. O acesso chega no seu e-mail assim que o pagamento é confirmado.</p></div>
-        <div class="it"><small>Bônus</small><h3>14 Estratégias para Encontrar Produtores e Compradores pela Internet</h3><span class="v">R$ 197</span><p>Um documento com as 14 estratégias para encontrar o telefone de produtores rurais e de compradores de grãos pela internet, sem precisar ir pessoalmente à fazenda ou ao escritório do comprador. Na corretora, testamos muito mais estratégias do que isso, e estas 14 foram as que realmente funcionaram. <em>Para você que pensa "como eu acho essas pessoas?".</em></p></div>
-        <div class="it"><small>Bônus</small><h3>Scripts de Ligação do Primeiro Contato ao Fechamento</h3><span class="v">R$ 247</span><p>Os scripts com as falas exatas para falar com produtores e compradores, do primeiro contato até o fechamento do negócio. <em>Para você que pensa "e o que eu falo na hora da ligação?".</em></p></div>
-        <div class="it"><small>Bônus</small><h3>Os Processos da Minha Corretora por Dentro</h3><span class="v">R$ 147</span><p>Todos os processos documentados da minha corretora: prospecção, atendimento, fechamento de negócio, relacionamento com produtores e compradores para fechar mais negócios no futuro, resolução de problemas, como pedir a comissão e como ela cai na conta. Você vê como uma operação real se organiza por dentro e pode usar como base para montar a sua.</p></div>
+        <div class="it main"><small>Produto principal</small><h3>GPS do Corretor de Grãos</h3><span class="v"><u>R$ 297</u></span><p>As 12 aulas com o caminho completo da corretagem de grãos, na área de membros, com <em>acesso por 1 ano</em> e certificado. O acesso chega no seu e-mail assim que o pagamento é confirmado.</p></div>
+        <div class="it"><small>Bônus</small><h3>14 Estratégias para Encontrar Produtores e Compradores pela Internet</h3><span class="v"><u>R$ 197</u></span><p>Um documento com as 14 estratégias para encontrar o telefone de produtores rurais e de compradores de grãos pela internet, sem precisar ir pessoalmente à fazenda ou ao escritório do comprador. Na corretora, testamos muito mais estratégias do que isso, e estas 14 foram as que realmente funcionaram. <em>Para você que pensa "como eu acho essas pessoas?".</em></p></div>
+        <div class="it"><small>Bônus</small><h3>Scripts de Ligação do Primeiro Contato ao Fechamento</h3><span class="v"><u>R$ 247</u></span><p>Os scripts com as falas exatas para falar com produtores e compradores, do primeiro contato até o fechamento do negócio. <em>Para você que pensa "e o que eu falo na hora da ligação?".</em></p></div>
+        <div class="it"><small>Bônus</small><h3>Os Processos da Minha Corretora por Dentro</h3><span class="v"><u>R$ 147</u></span><p>Todos os processos documentados da minha corretora: prospecção, atendimento, fechamento de negócio, relacionamento com produtores e compradores para fechar mais negócios no futuro, resolução de problemas, como pedir a comissão e como ela cai na conta. Você vê como uma operação real se organiza por dentro e pode usar como base para montar a sua.</p></div>
       </div>
       <div class="recebe rv"><strong>Como você recebe.</strong> O acesso é liberado automaticamente, assim que o pagamento é confirmado, e chega no seu e-mail na hora. Você tem 1 ano para assistir. Os bônus ficam indicados dentro da própria plataforma, todos em PDF. Se perder o acesso ou não encontrar algo, o suporte atende de segunda a segunda, em horário comercial, e reenvia pelo WhatsApp.</div>
     </div>
-    <aside class="pricecard rv">
-      <div class="pc-top"><small>Valor total</small><div class="was">De <s>R$ 888</s></div><small style="margin-top:14px;display:block">Seu investimento hoje</small>
-        <div class="now"><span>R$</span><b>19</b></div><p class="par"><strong>à vista no Pix</strong><br>ou 4x de R$ 5,16 no cartão</p></div>
-      <div class="pc-bot">
-        <p class="bal"><strong>Para colocar na balança:</strong> uma única operação de 10.000 sacas pode render de R$ 5 mil a R$ 10 mil de comissão, como mostrei no exemplo. O GPS custa R$ 19.<small>Exemplo ilustrativo. Os valores variam conforme a negociação e não são garantia de ganho.</small></p>
-        <div class="urg"><b>Oferta válida somente hoje</b>
-          <div class="bar"><i id="bar"></i></div>
-          <small>Os bônus são limitados a 100 pessoas, e restam <span id="left">57</span> vagas.</small>
-          <small class="after">Depois de hoje, o GPS volta ao preço normal de R$ 297.</small>
-          <div class="cd" data-cd hidden><div><b data-d>00</b><span>dias</span></div><div><b data-h>00</b><span>horas</span></div><div><b data-m>00</b><span>min</span></div><div><b data-s>00</b><span>seg</span></div></div>
-        </div>
-        <a class="btn big full cta" href="#">Quero meu acesso por R$ 19<i>→</i></a>
-        <p class="micro">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
+    <div class="offer-r">
+    <aside class="pricecard rv" id="pricecard">
+      <p class="pk-k">Seu investimento hoje</p>
+      <p class="pk-was"><span>Valor total de tudo que você leva:</span> <b class="pk-old"><u>R$ 888</u></b></p>
+      <div class="pk-now"><span class="pk-cur">R$</span><b class="pk-num">19</b><span class="pk-sub"><strong>à vista</strong>no Pix</span></div>
+      <p class="pk-par">ou <strong>4x de R$ 5,16</strong> no cartão</p>
+      <p class="pk-save">Você economiza <b>R$ 869</b> (98%)</p>
+      <a class="btn big full cta" href="#">Quero meu acesso por R$ 19<i>→</i></a>
+      <p class="micro pk-micro">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
+      <div class="urg"><b><span>Oferta válida somente hoje<em class="ud" data-today-line></em></span></b>
+        <div class="bar"><i id="bar"></i></div>
+        <small>Os bônus são limitados a 100 pessoas, e restam <strong class="hl-n"><span id="left">57</span> vagas</strong>.</small>
+        <small class="after">Depois de hoje, o GPS volta ao preço normal de <strong class="hl-p">R$ 297,00</strong>.</small>
+        <div class="cd" data-cd hidden><div><b data-d>00</b><span>dias</span></div><div><b data-h>00</b><span>horas</span></div><div><b data-m>00</b><span>min</span></div><div><b data-s>00</b><span>seg</span></div></div>
       </div>
     </aside>
+    <p class="bal rv"><strong>Para colocar na balança:</strong> uma única operação de 10.000 sacas pode render de R$ 5 mil a R$ 10 mil de comissão, como mostrei no exemplo. O GPS custa R$ 19.<small>Exemplo ilustrativo. Os valores variam conforme a negociação e não são garantia de ganho.</small></p>
+    </div>
   </div>
 </div></section>
 
@@ -611,20 +855,20 @@ html{-webkit-text-size-adjust:100%}
 </div></section>
 
 <!-- DOBRA 8 -->
-<section style="padding-top:96px"><div class="final rv" id="final">
+<section class="sec-final"><div class="final rv" id="final">
   <p class="tag" style="justify-content:center">A decisão é sua</p>
   <h2>Você pode continuar como está. Ou pode <span class="serif">dar o primeiro passo hoje.</span></h2>
   <div class="m"><p>Você já viu como funciona o mercado de grãos. Já viu que não precisa de capital para começar e que contato se constrói. Já viu o caminho completo em 12 aulas, os 3 bônus e a garantia de 7 dias.</p>
   <p>Agora sobra uma pergunta simples: daqui a alguns anos, você vai querer ter começado hoje ou continuar dizendo "ano que vem eu vejo isso"?</p>
   <p>O GPS do Corretor de Grãos custa R$&nbsp;19. O risco é todo meu, porque você tem 7 dias para testar e pedir o dinheiro de volta se não fizer sentido.</p></div>
-  <div class="urg"><b>Oferta válida somente hoje</b>
+  <div class="urg"><b><span>Oferta válida somente hoje<em class="ud" data-today-line></em></span></b>
     <div class="bar"><i id="bar2"></i></div>
-    <small>Os bônus são limitados a 100 pessoas, e restam <span id="left2">57</span> vagas.</small>
-    <small class="after">Depois de hoje, o GPS volta ao preço normal de R$ 297.</small>
+    <small>Os bônus são limitados a 100 pessoas, e restam <strong class="hl-n"><span id="left2">57</span> vagas</strong>.</small>
+    <small class="after">Depois de hoje, o GPS volta ao preço normal de <strong class="hl-p">R$ 297,00</strong>.</small>
     <div class="cd" data-cd hidden><div><b data-d>00</b><span>dias</span></div><div><b data-h>00</b><span>horas</span></div><div><b data-m>00</b><span>min</span></div><div><b data-s>00</b><span>seg</span></div></div>
   </div>
   <p class="m"><span class="hl">Eu te vejo lá dentro.</span></p>
-  <div class="chips"><span><b>Só hoje</b></span><span>R$ 19 ou 4x de R$ 5,16</span><span><b>7 dias</b> de garantia</span><span>Acesso imediato</span></div>
+  <div class="chips"><span><b>Só hoje<em class="ts" data-today-short></em></b></span><span>R$ 19 ou 4x de R$ 5,16</span><span><b>7 dias</b> de garantia</span><span>Acesso imediato</span></div>
   <a class="btn big cta" href="#">Quero meu acesso por R$ 19<i>→</i></a>
 </div></section>
 
@@ -645,7 +889,7 @@ html{-webkit-text-size-adjust:100%}
     <details><summary>Tem suporte?</summary><p>Sim, de segunda a segunda, em horário comercial.</p></details>
   </div>
   <div class="ps rv">
-    <p><b>P.S.</b>O GPS do Corretor de Grãos mostra o caminho em 12 aulas, com 3 bônus, por R$&nbsp;19 e com 7 dias de garantia. A oferta está disponível somente hoje, e os bônus são limitados. Restam <span id="left3">57</span> vagas.</p>
+    <p><b>P.S.</b>O GPS do Corretor de Grãos mostra o caminho em 12 aulas, com 3 bônus, por R$&nbsp;19 e com 7 dias de garantia. A oferta está disponível somente hoje<strong class="ps-d" data-today-short></strong>, e os bônus são limitados. Restam <span id="left3">57</span> vagas.</p>
     <p><b>P.P.S.</b>Daqui a alguns anos, você vai querer ter começado hoje. Dá o primeiro passo.</p>
     <a class="btn cta" href="#">Quero meu acesso por R$ 19<i>→</i></a>
   </div>
@@ -666,7 +910,8 @@ var CONFIG={
   checkoutUrl:'https://pay.cakto.com.br/69miqfh', // link do checkout da Cakto
   offerEnd:null,            // fim REAL da oferta, ex.: '2026-10-20T23:59:59-03:00'. null = esconde o contador
   bonusTotal:100,           // total de vagas com bônus
-  bonusLeft:57              // vagas restantes (mantenha atualizado)
+  bonusLeft:57,             // vagas restantes (mantenha atualizado)
+  autoDate:true             // mostra a data de HOJE (horário de Brasília) ao lado de "oferta válida somente hoje"; muda sozinha todo dia
 };
 /* ===================================== */
 var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
@@ -687,10 +932,34 @@ var T=[
 var rail=$('#rail');
 T.forEach(function(t,i){var a=document.createElement('article');a.className='vid rv';
 a.innerHTML='<button class="thumb" data-v="'+t[0]+'" aria-label="Reproduzir depoimento de '+t[1]+'"><img loading="lazy" decoding="async" width="360" height="480" alt="" src="'+SITE+t[0]+'.jpg"><span class="n">HISTÓRIA 0'+(i+1)+'</span><span class="pl">▶</span><span class="cap"><small>'+t[1]+'</small><h3>'+t[2]+'</h3></span></button><p>'+t[3]+'</p>';rail.appendChild(a)});
-$('#next').onclick=function(){rail.scrollBy({left:360,behavior:'smooth'})};$('#prev').onclick=function(){rail.scrollBy({left:-360,behavior:'smooth'})};
+var vc=$$('.vid',rail),rcnt=$('#rc'),pv=$('#prev'),nx=$('#next');
+function vstep(){return vc[0].offsetWidth+(parseFloat(getComputedStyle(rail).columnGap)||18)}
+function rupd(){
+  var i=Math.min(vc.length,Math.round(rail.scrollLeft/vstep())+1);
+  pv.disabled=rail.scrollLeft<4;
+  nx.disabled=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-4;
+  nx.classList.toggle('hint',rail.scrollLeft<4);
+  rcnt.textContent=i+' / '+vc.length;
+}
+nx.onclick=function(){$$('.vplayer').forEach(stopVid);rail.scrollBy({left:vstep(),behavior:'smooth'})};
+pv.onclick=function(){$$('.vplayer').forEach(stopVid);rail.scrollBy({left:-vstep(),behavior:'smooth'})};
+rail.addEventListener('scroll',rupd,{passive:true});addEventListener('resize',rupd);rupd();
 // modal de vídeo
 var m=$('#modal'),f=$('iframe',m);
-document.addEventListener('click',function(e){var b=e.target.closest('.thumb');if(!b||!b.dataset.v)return;f.src='https://www.youtube.com/embed/'+b.dataset.v+'?autoplay=1&rel=0';m.classList.add('on')});
+// vídeo toca no próprio lugar da capa (sem abrir tela por cima)
+function stopVid(v){var o=v._orig;if(o&&v.parentNode){v.parentNode.replaceChild(o,v)}}
+function playVid(b){
+  $$('.vplayer').forEach(stopVid);
+  var v=document.createElement('div');v._orig=b;
+  v.className='vplayer'+(b.closest('.proof')?' pr':'');
+  v.innerHTML='<iframe src="https://www.youtube.com/embed/'+b.dataset.v+'?autoplay=1&rel=0&playsinline=1" title="Depoimento" allow="autoplay;encrypted-media;fullscreen;picture-in-picture" allowfullscreen></iframe>';
+  b.parentNode.replaceChild(v,b);
+}
+document.addEventListener('click',function(e){
+  var st=e.target.closest('.vstop');if(st){stopVid(st.closest('.vplayer'));return}
+  var b=e.target.closest('.thumb');if(!b||!b.dataset.v)return;
+  playVid(b);
+});
 var cl=function(){m.classList.remove('on');f.src=''};$('button',m).onclick=cl;m.onclick=function(e){if(e.target===m)cl()};addEventListener('keydown',function(e){if(e.key==='Escape')cl()});
 // ticker
 var items=['12 aulas','3 bônus','Sem capital próprio','Acesso imediato','1 ano de acesso','Certificado','7 dias de garantia','+2.450 corretores','11 anos de prática real'];
@@ -716,6 +985,102 @@ if(CONFIG.offerEnd){var END=new Date(CONFIG.offerEnd),z=function(n){return Strin
  (function t(){var s=Math.max(0,Math.floor((END-Date.now())/1000));
   $$('[data-cd]').forEach(function(b){$('[data-d]',b).textContent=z(Math.floor(s/86400));$('[data-h]',b).textContent=z(Math.floor(s%86400/3600));$('[data-m]',b).textContent=z(Math.floor(s%3600/60));$('[data-s]',b).textContent=z(s%60)});
   if(s>0)setTimeout(t,1000)})()}
+
+// Aulas: indicação de deslizar + setas
+(function(){
+  $$('.mods').forEach(function(m){
+    var w=document.createElement('div');w.className='mods-w';m.parentNode.insertBefore(w,m);w.appendChild(m);
+    var c=document.createElement('div');c.className='mods-ctl';
+    c.innerHTML='<button type="button" class="mc mc-b" aria-label="Aula anterior">←</button><span class="mc-t"><b class="mc-c"></b>Deslize para o lado ou toque nas setas para ver as outras aulas</span><button type="button" class="mc mc-n" aria-label="Próxima aula">→</button>';
+    w.appendChild(c);
+    var b=$('.mc-b',c),n=$('.mc-n',c),cnt=$('.mc-c',c),cards=$$('.mod',m);
+    function step(){return cards[0].offsetWidth+12}
+    function upd(){
+      var over=m.scrollWidth>m.clientWidth+4;c.hidden=!over;if(!over)return;
+      var i=Math.min(cards.length,Math.round(m.scrollLeft/step())+1);
+      b.disabled=m.scrollLeft<4;
+      n.disabled=m.scrollLeft+m.clientWidth>=m.scrollWidth-4;
+      n.classList.toggle('hint',m.scrollLeft<4);
+      cnt.textContent=i+' / '+cards.length;
+    }
+    b.onclick=function(){m.scrollBy({left:-step(),behavior:'smooth'})};
+    n.onclick=function(){m.scrollBy({left:step(),behavior:'smooth'})};
+    m.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+    // empurrãozinho: mostra que dá para arrastar
+    var done=false,io2=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting&&!done&&m.scrollWidth>m.clientWidth+4&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+        done=true;io2.disconnect();m.style.scrollSnapType='none';
+        setTimeout(function(){m.scrollTo({left:64,behavior:'smooth'})},500);
+        setTimeout(function(){m.scrollTo({left:0,behavior:'smooth'})},1150);
+        setTimeout(function(){m.style.scrollSnapType=''},1900);
+      }})},{threshold:.6});io2.observe(m);
+  });
+})();
+
+// Oferta: a linha corta cada valor quando ele chega no meio da tela
+(function(){
+  var vs=$$('.it .v'),red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function u(){
+    var H=innerHeight;
+    vs.forEach(function(v){var r=v.getBoundingClientRect(),c=(r.top+r.bottom)/2;
+      v.closest('.it').classList.toggle('cut-v',red||c<=H*0.55)});
+    var pc=$('#pricecard'),po=$('.pk-old');
+    if(pc&&po){var q=po.getBoundingClientRect();pc.classList.toggle('cut-v',red||(q.top+q.bottom)/2<=H*0.55)}
+  }
+  addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u();
+})();
+
+// Data de hoje, automática (horário de Brasília)
+(function(){
+  var tz='America/Sao_Paulo';
+  function today(){
+    var n=new Date();
+    var full=new Intl.DateTimeFormat('pt-BR',{timeZone:tz,weekday:'long',day:'2-digit',month:'2-digit',year:'numeric'}).format(n);
+    var sh=new Intl.DateTimeFormat('pt-BR',{timeZone:tz,day:'2-digit',month:'2-digit'}).format(n);
+    var wd=new Intl.DateTimeFormat('pt-BR',{timeZone:tz,weekday:'long'}).format(n);
+    var dmy=new Intl.DateTimeFormat('pt-BR',{timeZone:tz,day:'2-digit',month:'2-digit',year:'numeric'}).format(n);
+    return {full:full,short:sh,wd:wd,dmy:dmy};
+  }
+  function upd(){
+    var t=today();
+    $$('[data-today-line]').forEach(function(e){e.textContent=CONFIG.autoDate?t.wd+' · '+t.dmy:''});
+    $$('[data-today-short]').forEach(function(e){e.textContent=CONFIG.autoDate?(e.classList.contains('ps-d')?' ('+t.short+')':t.short):''});
+  }
+  upd();setInterval(upd,60000);
+})();
+
+// A realidade: leitura em cenas, checklist, riscos
+(function(){
+  var sc=$$('#scenes .sc'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function upd(){
+    if(!sc.length)return;
+    var mid=innerHeight*.5,best=-1,bd=1e9;
+    sc.forEach(function(e,i){var r=e.getBoundingClientRect(),c=(r.top+r.bottom)/2,d=Math.abs(c-mid);
+      if(r.bottom>0&&r.top<innerHeight&&d<bd){bd=d;best=i}});
+    if(best===-1&&sc[sc.length-1].getBoundingClientRect().bottom<0)best=sc.length;
+    sc.forEach(function(e,i){e.classList.toggle('on',reduce||i===best);e.classList.toggle('seen',!reduce&&i<best)});
+  }
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  var cb=$$('.chk-b button'),res=$('#chk-r');
+  cb.forEach(function(b){b.addEventListener('click',function(){
+    b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');
+    var n=cb.filter(function(x){return x.getAttribute('aria-pressed')==='true'}).length;
+    res.classList.toggle('hit',n>0);
+    res.textContent=n===0?'Marque as que fazem parte da sua rotina.':(n===cb.length?'Você marcou todas. ':'Você marcou '+n+' de '+cb.length+'. ')+'Então esta página foi feita pra você.';
+  })});
+  // faixa vermelha: uma frase de cada vez, conforme a pessoa rola a página
+  var cutBox=$('.cut'),cutItems=$$('.cut-l span');
+  function updCut(){
+    if(!cutBox)return;
+    var H=innerHeight,n=cutItems.length,f=cutItems[0].getBoundingClientRect();
+    var c=(f.top+f.bottom)/2,         // centro da primeira frase
+        START=H*0.56,                 // a faixa começa quando a 1ª frase está quase no meio da tela
+        PX=70;                        // a cada ~70px de rolagem, a próxima frase é riscada
+    var k=reduce?n:(c<=START?Math.min(n,Math.floor((START-c)/PX)+1):0);
+    cutItems.forEach(function(e,i){e.classList.toggle('x',i<k)});
+  }
+  addEventListener('scroll',updCut,{passive:true});addEventListener('resize',updCut);updCut();
+})();
 })();
 </script>
 </body>
