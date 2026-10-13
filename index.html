@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GPS do Corretor de Grãos | O caminho em 12 aulas</title>
+<meta name="description" content="O caminho em 12 aulas para começar na corretagem de grãos, com 3 bônus e 7 dias de garantia. Com Benhur Willian.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0c1110">
+<link rel="preload" as="image" href="https://sala.benhurcorretordegraos.com.br/_next/image?url=%2Fimages%2Fbenhur.webp&w=1080&q=75" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c1110;--bg2:#121917;--card:#161e1b;--line:#26322e;--tx:#eef2ea;--mut:#93a39b;--lime:#c8f542;--lime2:#a6d62a;--amb:#ff9f1c;--r:20px;
+--sans:'Bricolage Grotesque',system-ui,sans-serif;--serif:'Instrument Serif',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--tx);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+[hidden]{display:none!important}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+.w{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:1.02;text-wrap:balance}
+h1{font-size:clamp(40px,6.2vw,86px)}h2{font-size:clamp(32px,4.6vw,62px)}h3{font-size:22px;letter-spacing:-.02em}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime);letter-spacing:-.01em}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);display:inline-flex;gap:10px;align-items:center;margin-bottom:22px}
+.tag::before{content:"";width:22px;height:1px;background:var(--lime)}
+p.lede{color:var(--mut);font-size:19px;max-width:620px}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--lime);color:#0c1110;font-weight:700;border-radius:999px;padding:8px 8px 8px 28px;font-size:16px;transition:.3s;border:0}
+.btn i{width:44px;height:44px;border-radius:50%;background:#0c1110;color:var(--lime);display:grid;place-items:center;font-style:normal;transition:.3s;flex:none}
+.btn:hover{box-shadow:0 0 0 6px #c8f54233;transform:translateY(-2px)}.btn:hover i{transform:rotate(-45deg)}
+.btn.big{font-size:18px;padding:10px 10px 10px 34px}.btn.big i{width:52px;height:52px}
+.btn.full{width:100%;justify-content:space-between}
+.micro{font-family:var(--mono);font-size:12px;color:var(--mut);margin-top:14px;letter-spacing:.02em}
+.c{text-align:center}
+/* nav */
+nav.top{position:fixed;inset:14px 0 auto;z-index:50;pointer-events:none}
+nav.top .w{display:flex;justify-content:space-between;align-items:center;background:#121917cc;backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;padding:8px 8px 8px 22px;pointer-events:auto}
+.logo{font-weight:800;letter-spacing:-.03em;font-size:17px;display:flex;align-items:center;gap:10px}
+.logo b{width:28px;height:28px;border-radius:8px;background:var(--lime);color:#0c1110;display:grid;place-items:center}
+.logo b svg{width:17px;height:17px}
+nav.top ul{display:flex;gap:26px;list-style:none;padding:0;font-size:14px;color:var(--mut)}nav.top ul a:hover{color:var(--tx)}
+nav.top .btn{padding:4px 4px 4px 18px;font-size:14px}nav.top .btn i{width:34px;height:34px}
+@media(max-width:900px){nav.top ul{display:none}}
+@media(max-width:520px){.logo span{display:none}}
+.prog{position:fixed;top:0;left:0;height:3px;background:var(--lime);width:0;z-index:99}
+/* hero */
+.hero{padding:150px 0 70px;position:relative;overflow:hidden;background:radial-gradient(700px 500px at 85% 20%,#c8f54222,transparent 60%),radial-gradient(500px 400px at 0 80%,#ff9f1c18,transparent 60%)}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;opacity:.25;mask-image:radial-gradient(ellipse at 70% 30%,#000,transparent 70%);pointer-events:none}
+.route{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.5;pointer-events:none}
+.route path{stroke:var(--lime);stroke-width:1.5;fill:none;stroke-dasharray:3 9;stroke-linecap:round;animation:dash 40s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-600}}
+.hero-g{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;position:relative;z-index:1}
+.hero p.lede{margin:28px 0 36px}
+.acts{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chips span{font-size:13px;border:1px solid var(--line);border-radius:8px;padding:6px 12px;color:var(--mut)}
+.chips b{color:var(--tx)}
+.person{position:relative;border-radius:28px;aspect-ratio:4/5;background:var(--card);border:1px solid var(--line)}
+.person img{width:100%;height:100%;object-fit:cover;border-radius:28px}
+.person::after{content:"";position:absolute;inset:0;border-radius:28px;pointer-events:none;background:linear-gradient(transparent 50%,#0c1110ee)}
+.person figcaption{position:absolute;z-index:2;left:22px;right:22px;bottom:22px}
+.person small{font-family:var(--mono);font-size:11px;color:var(--lime);letter-spacing:.1em;text-transform:uppercase}
+.person strong{display:block;font-size:28px;letter-spacing:-.03em}
+.person span.s{color:var(--mut);font-size:14px}
+.float{position:absolute;z-index:3;background:#0c1110e6;backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-family:var(--mono);font-size:12px;animation:fl 6s ease-in-out infinite}
+.float b{display:block;color:var(--lime);font-size:20px;font-family:var(--sans)}
+.f1{top:8%;left:-26px}.f2{top:46%;right:-18px;animation-delay:-3s}
+@keyframes fl{50%{transform:translateY(-10px)}}
+@media(max-width:900px){.hero-g{grid-template-columns:1fr}.f1{left:8px}.f2{right:8px}}
+/* ticker */
+.ticker{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;white-space:nowrap;padding:16px 0;font-family:var(--mono);font-size:13px;color:var(--mut)}
+.ticker div{display:inline-block;animation:tk 38s linear infinite}
+.ticker span{margin:0 26px}.ticker em{font-style:normal;color:var(--lime)}
+@keyframes tk{to{transform:translateX(-50%)}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:64px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.stat strong{display:block;font-size:clamp(34px,4vw,54px);letter-spacing:-.04em;line-height:1.1}
+.stat span{color:var(--mut)}
+@media(max-width:800px){.stats{grid-template-columns:1fr}}
+section{padding:96px 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:48px}
+.head p{color:var(--mut);font-size:18px}
+.head.one{grid-template-columns:1fr;max-width:900px}
+@media(max-width:800px){.head{grid-template-columns:1fr;gap:20px}}
+/* realidade */
+.mirror{background:var(--tx);color:#0c1110;border-radius:40px;margin:0 12px}
+.mirror .tag{color:#3c5a00}.mirror .tag::before{background:#3c5a00}
+.mirror .serif{color:#3c7a00}
+.mirror-g{display:grid;grid-template-columns:1.1fr .9fr;gap:56px}
+.mirror p{color:#38443f;font-size:19px}.mirror p+p{margin-top:18px}
+.mirror strong{color:#0c1110}
+.q{margin-top:60px;font-size:clamp(24px,3vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1.15;max-width:960px}
+.big{font-size:clamp(70px,13vw,190px);font-weight:800;letter-spacing:-.06em;line-height:.9;margin-top:36px}
+.big span{color:#3c7a00}
+.mirror .close{font-size:22px;margin-top:14px;color:#0c1110;font-weight:600;max-width:820px}
+.trust{margin-top:34px;font-size:19px;max-width:820px;border-left:3px solid #3c7a00;padding-left:18px;color:#0c1110!important}
+.proof{margin-top:48px;display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:center;background:#0c1110;color:var(--tx);border-radius:28px;padding:22px}
+.proof .thumb{border-radius:18px}
+.proof p{color:var(--tx);font-size:18px}.proof small{font-family:var(--mono);font-size:11px;color:var(--lime);letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:8px}
+.bridge{margin-top:44px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.bridge p{max-width:720px;color:#0c1110;font-size:19px}
+@media(max-width:800px){.mirror-g{grid-template-columns:1fr}.mirror{border-radius:28px}.proof{grid-template-columns:1fr}}
+/* thumb + play */
+.thumb{position:relative;display:block;width:100%;border:0;padding:0;background:#000;text-align:left;overflow:hidden;aspect-ratio:9/12}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85;transition:.5s}
+.thumb:hover img{transform:scale(1.06)}
+.thumb .pl{position:absolute;z-index:2;top:16px;right:16px;width:52px;height:52px;border-radius:50%;background:var(--lime);color:#0c1110;display:grid;place-items:center;font-size:16px;transition:.3s}
+.thumb:hover .pl{transform:scale(1.15)}
+.proof .thumb{aspect-ratio:3/4}
+/* caminho */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;position:relative;transition:.35s}
+.step:hover{border-color:var(--lime2);transform:translateY(-4px)}
+.step .n{font-size:84px;font-weight:800;color:transparent;-webkit-text-stroke:1px var(--line);line-height:1;letter-spacing:-.05em;transition:.35s}
+.step:hover .n{-webkit-text-stroke-color:var(--lime)}
+.step small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.step h3{margin:14px 0 8px;font-size:24px}.step p{color:var(--mut);font-size:16px}
+.step::after{content:"→";position:absolute;right:-18px;top:50%;width:32px;height:32px;border-radius:50%;background:var(--lime);color:#0c1110;display:grid;place-items:center;z-index:2;font-weight:800}
+.step:last-child::after{display:none}
+@media(max-width:900px){.steps{grid-template-columns:1fr}.step::after{right:auto;left:50%;top:auto;bottom:-18px;transform:translateX(-50%) rotate(90deg)}}
+.buyers{margin-top:72px;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.buyers h3{font-size:clamp(28px,3.4vw,44px);line-height:1.05}
+.buyers p{color:var(--mut);margin-top:16px}.buyers p strong{color:var(--tx)}
+.bl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bl div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 20px 54px;font-weight:600;font-size:18px;letter-spacing:-.02em;position:relative;line-height:1.25}
+.bl div::before{content:"";position:absolute;left:20px;top:25px;width:14px;height:14px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px #c8f54222}
+@media(max-width:900px){.buyers{grid-template-columns:1fr}.bl{grid-template-columns:1fr}}
+.two{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.two .bx{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.two .bx small{font-family:var(--mono);font-size:11px;color:var(--lime);letter-spacing:.1em;text-transform:uppercase}
+.two .bx h3{margin:14px 0 8px}.two .bx p{color:var(--mut);font-size:16px}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+/* simulador */
+.sim{margin-top:72px;border:1px solid var(--line);border-radius:32px;background:linear-gradient(135deg,#c8f54214,transparent 55%),var(--card);padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px)}
+.sim .eg{color:var(--mut);margin-top:14px;font-size:17px}
+.sim .eg strong{color:var(--tx)}
+.sim h3{font-size:clamp(28px,3.4vw,44px);line-height:1.05}
+.fld{margin-top:22px}
+.fld label{display:flex;justify-content:space-between;font-size:14px;color:var(--mut);margin-bottom:8px;font-family:var(--mono)}
+.fld output{color:var(--lime);font-weight:600}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;background:var(--line);outline:0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--lime);border:4px solid #0c1110;box-shadow:0 0 0 2px var(--lime);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--lime);border:4px solid #0c1110;cursor:pointer}
+.out{background:#0c1110;border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:18px;justify-content:center}
+.out .row small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.out .row b{display:block;font-size:clamp(26px,3vw,38px);letter-spacing:-.04em;line-height:1.15}
+.out .row.hi{border-top:1px dashed var(--line);padding-top:18px}
+.out .row.hi b{color:var(--lime);font-size:clamp(38px,4.6vw,60px)}
+.out .row.hi.m b{font-size:clamp(30px,3.4vw,44px)}
+.out p{font-size:12px;color:var(--mut);font-family:var(--mono);line-height:1.5}
+@media(max-width:900px){.sim{grid-template-columns:1fr}}
+/* produto */
+.stage{display:grid;grid-template-columns:230px 1fr;gap:36px;padding:40px 0;border-top:1px solid var(--line)}
+.stage:last-of-type{border-bottom:1px solid var(--line)}
+.stage .sh small{font-family:var(--mono);font-size:12px;color:var(--lime);letter-spacing:.08em}
+.stage .sh h3{font-size:28px;margin-top:10px;line-height:1.08}
+.mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(172px,1fr));gap:16px}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.35s}
+.mod:hover{transform:translateY(-6px);border-color:var(--lime2)}
+.mod img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top}
+.mod div{padding:16px 18px 20px}
+.mod small{font-family:var(--mono);font-size:11px;color:var(--lime);letter-spacing:.08em}
+.mod h4{font-size:17px;letter-spacing:-.02em;line-height:1.2;margin:6px 0 8px}
+.mod p{font-size:14px;color:var(--mut);line-height:1.5}
+@media(max-width:900px){.stage{grid-template-columns:1fr;gap:20px}}
+.know{margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.know ul{list-style:none;padding:0;display:grid;gap:12px}
+.know li{display:flex;gap:12px;font-size:18px}.know li::before{content:"✓";color:#0c1110;background:var(--lime);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;flex:none;margin-top:2px}
+.deliv{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:32px}
+.deliv h3{margin-bottom:16px}.deliv p{color:var(--mut);font-size:16px}.deliv p+p{margin-top:12px}.deliv strong{color:var(--tx)}
+.deliv .kk{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.deliv .kk span{font-family:var(--mono);font-size:12px;border:1px solid var(--line);border-radius:8px;padding:6px 12px;color:var(--lime)}
+.honest{margin-top:20px;font-size:15px;color:var(--mut);border-left:2px solid var(--lime);padding-left:14px}
+@media(max-width:900px){.know{grid-template-columns:1fr}}
+/* historia */
+.story{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,72px);align-items:center}
+.sp{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line)}
+.sp img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.sp::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 62%,#0c1110d9)}
+.sp figcaption{position:absolute;z-index:2;left:22px;bottom:20px}
+.sp small{font-family:var(--mono);font-size:11px;color:var(--lime);letter-spacing:.1em;text-transform:uppercase;display:block}
+.sp strong{font-size:26px;letter-spacing:-.03em}
+.story h2{margin-bottom:28px}
+.story p{color:var(--mut);font-size:18px}.story p+p{margin-top:16px}
+.story p b{color:var(--tx);font-weight:600}
+.pq{font-family:var(--serif);font-style:italic;color:var(--lime)!important;font-size:clamp(24px,2.6vw,34px)!important;line-height:1.15;margin-top:22px!important}
+.story .fin{margin-top:26px;font-size:clamp(24px,2.8vw,36px);font-weight:800;letter-spacing:-.03em;color:var(--tx)!important;line-height:1.1}
+.story .btn{margin-top:26px}
+@media(min-width:901px){.story{align-items:start}.sp{position:sticky;top:100px}}
+@media(max-width:900px){.story{grid-template-columns:1fr}.sp{max-width:440px;margin-inline:auto}}
+/* depoimentos */
+.rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:20px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.vid{flex:0 0 min(340px,82vw);scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.35s}
+.vid:hover{transform:translateY(-6px);border-color:var(--lime2)}
+.vid .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(#0000 30%,#0c1110f2)}
+.vid .n{position:absolute;top:16px;left:16px;z-index:2;font-family:var(--mono);font-size:11px;background:#0c1110cc;border:1px solid var(--line);border-radius:6px;padding:4px 9px}
+.vid .cap{position:absolute;z-index:2;left:18px;right:18px;bottom:18px}
+.vid .cap small{font-family:var(--mono);color:var(--lime);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.vid .cap h3{font-size:19px;margin-top:6px;line-height:1.15}
+.vid p{padding:16px 20px 20px;font-size:14px;color:var(--mut)}
+.rail-ctl{display:flex;gap:10px;margin-top:18px;justify-content:flex-end}
+.rail-ctl button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:none;font-size:18px;transition:.3s}
+.rail-ctl button:hover{background:var(--lime);color:#0c1110}
+.common{margin-top:48px;border:1px solid var(--line);border-radius:28px;padding:44px;background:linear-gradient(135deg,#c8f54214,transparent 60%),var(--card);display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.common ul{list-style:none;padding:0;display:grid;gap:12px}
+.common li{display:flex;gap:12px;font-size:18px}.common li::before{content:"✓";color:#0c1110;background:var(--lime);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;flex:none;margin-top:2px}
+.note{margin-top:22px;font-size:12px;color:var(--mut);font-family:var(--mono);line-height:1.6;max-width:900px}
+@media(max-width:800px){.common{grid-template-columns:1fr;padding:28px}}
+/* modal */
+.modal{position:fixed;inset:0;background:#000d;z-index:200;display:none;place-items:center;padding:20px}
+.modal.on{display:grid}.modal div{width:min(900px,100%);aspect-ratio:16/9;position:relative}.modal iframe{width:100%;height:100%;border:0;border-radius:14px}
+.modal button{position:absolute;top:-46px;right:0;background:none;border:0;font-size:32px}
+/* oferta */
+.offer{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
+.stack{display:grid;gap:12px}
+.it{display:grid;grid-template-columns:1fr auto;gap:8px 20px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:.3s}
+.it:hover{border-color:var(--lime2)}
+.it.main{background:linear-gradient(145deg,#c8f54226,var(--card) 60%)}
+.it small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);grid-column:1/-1}
+.it h3{font-size:21px;line-height:1.15}
+.it .v{font-family:var(--mono);font-size:14px;color:var(--mut);text-decoration:line-through;white-space:nowrap;align-self:start}
+.it p{grid-column:1/-1;color:var(--mut);font-size:15.5px}.it p em{font-style:normal;color:var(--tx)}
+.pricecard{position:sticky;top:96px;background:var(--tx);color:#0c1110;border-radius:32px;padding:34px;overflow:hidden}
+.pc-top{padding-bottom:26px;border-bottom:2px dashed #c0c9bd;position:relative}
+.pc-top::before,.pc-top::after{content:"";position:absolute;width:30px;height:30px;border-radius:50%;background:var(--bg2);bottom:-16px}
+.pc-top::before{left:-49px}.pc-top::after{right:-49px}
+.pc-top small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#3c5a00}
+.pc-top .was{font-size:18px;color:#5b685f;margin-top:6px}.pc-top .was s{text-decoration-thickness:2px}
+.pc-top .now{display:flex;align-items:baseline;gap:6px;margin-top:2px}
+.pc-top .now span{font-size:28px;font-weight:800}.pc-top .now b{font-size:clamp(76px,10vw,112px);font-weight:800;letter-spacing:-.06em;line-height:1}
+.pc-top .par{font-size:17px;color:#38443f;margin-top:4px}.pc-top .par strong{color:#0c1110}
+.pc-bot{padding-top:26px}
+.pc-bot .bal{font-size:14.5px;color:#38443f;line-height:1.55}.pc-bot .bal small{display:block;font-size:11.5px;color:#5b685f;margin-top:6px}
+.urg{margin:20px 0;background:#0c1110;color:var(--tx);border-radius:18px;padding:18px}
+.urg b{display:flex;gap:10px;align-items:center;font-size:15px}
+.urg b::before{content:"";width:9px;height:9px;border-radius:50%;background:#ff4d4d;animation:bl 1.4s infinite;flex:none}
+@keyframes bl{50%{opacity:.2}}
+.bar{height:8px;border-radius:99px;background:var(--line);margin:12px 0 8px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--lime2),var(--amb));border-radius:99px;width:43%}
+.urg small{font-family:var(--mono);font-size:11.5px;color:var(--mut);display:block}
+.urg .after{margin-top:8px;color:var(--mut)}
+.cd{display:flex;gap:10px;margin-top:14px}
+.cd div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 6px;text-align:center}
+.cd b{display:block;font-size:24px;font-family:var(--mono);color:var(--lime);font-weight:600;line-height:1.2}.cd span{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+.pc-bot .micro{color:#38443f;text-align:center}
+.recebe{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;color:var(--mut);font-size:15.5px}
+.recebe strong{color:var(--tx)}
+@media(max-width:960px){.offer{grid-template-columns:1fr}.pricecard{position:relative;top:0}}
+/* garantia */
+.gar{background:var(--bg2);border-block:1px solid var(--line)}
+.gar-g{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(28px,5vw,72px);align-items:center}
+.seal{position:relative;width:min(300px,70vw);aspect-ratio:1;margin-inline:auto}
+.seal svg{width:100%;height:100%}
+.seal .ring{animation:spin 40s linear infinite;transform-origin:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+.seal .in{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.seal .in b{display:block;font-size:clamp(70px,9vw,100px);font-weight:800;letter-spacing:-.06em;line-height:.9;color:var(--lime)}
+.seal .in span{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.gar h2{margin-bottom:22px}
+.gar p{color:var(--mut);font-size:19px;max-width:640px}.gar p+p{margin-top:16px}
+.how{margin:28px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.how div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;font-size:15px;color:var(--mut)}
+.how b{display:block;font-family:var(--mono);font-size:12px;color:var(--lime);margin-bottom:6px;letter-spacing:.08em}
+.gar .risk{color:var(--tx);font-weight:700;font-size:22px;margin-bottom:24px}
+@media(max-width:900px){.gar-g{grid-template-columns:1fr}.how{grid-template-columns:1fr}}
+/* final */
+.final{text-align:center;position:relative;overflow:hidden;border-radius:40px;margin:0 12px;padding:110px 20px;background:radial-gradient(600px 400px at 50% 0,#c8f54233,transparent 70%),var(--bg2);border:1px solid var(--line)}
+.final h2{font-size:clamp(36px,5.6vw,80px);max-width:980px;margin:0 auto 34px}
+.final .m{max-width:660px;margin:auto;color:var(--mut)}.final .m p+p{margin-top:14px}.final .m .hl{color:var(--tx);font-weight:700;font-size:22px}
+.final .cd{max-width:420px;margin:30px auto 0}
+.final .urg{max-width:520px;margin:30px auto;text-align:left}
+.final .chips{justify-content:center;margin:26px 0 34px}
+/* faq */
+.faq{max-width:900px;margin-inline:auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:clamp(18px,2vw,24px);font-weight:600;letter-spacing:-.02em;transition:.3s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--lime)}
+.faq summary::after{content:"+";font-size:30px;color:var(--lime);transition:.3s;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--mut);padding:0 40px 28px 0;font-size:17px}
+.ps{max-width:900px;margin:56px auto 0;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:36px}
+.ps p{color:var(--mut);font-size:18px}.ps p+p{margin-top:14px}.ps b{color:var(--lime);font-family:var(--mono);margin-right:8px}
+.ps .btn{margin-top:26px}
+footer{padding:50px 0 130px;color:var(--mut);font-size:14px}
+footer .w{display:grid;gap:18px}
+footer .l{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer .law{font-size:12.5px;max-width:860px;line-height:1.6;border-top:1px solid var(--line);padding-top:18px}
+.dock{position:fixed;left:50%;bottom:16px;transform:translate(-50%,140%);z-index:60;transition:.4s;width:max-content;max-width:calc(100% - 24px)}
+.dock.on{transform:translate(-50%,0)}.dock .btn{box-shadow:0 14px 40px #000a}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+
+<nav class="top"><div class="w">
+  <a class="logo" href="#"><b><svg viewBox="0 0 24 24" fill="none" stroke="#0c1110" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></b><span>GPS do Corretor de Grãos</span></a>
+  <ul><li><a href="#caminho">O caminho</a></li><li><a href="#produto">O que você leva</a></li><li><a href="#resultados">Resultados</a></li><li><a href="#garantia">Garantia</a></li><li><a href="#faq">Perguntas</a></li></ul>
+  <a class="btn cta" href="#">Quero meu acesso<i>→</i></a>
+</div></nav>
+
+<!-- DOBRA 1 -->
+<header class="hero">
+  <svg class="route" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-20 700 C 200 640, 260 420, 480 450 S 760 250, 1000 300 S 1180 120, 1240 60"/></svg>
+  <div class="w hero-g">
+  <div>
+    <p class="tag">GPS do Corretor de Grãos</p>
+    <h1>Domine a corretagem de grãos e crie uma <span class="serif">nova fonte de renda</span> no agronegócio</h1>
+    <p class="lede">A profissão que permite ganhar comissões de 10 a 30 mil por mês dentro do mercado que você já conhece, sem capital próprio e sem deixar o que você faz hoje.</p>
+    <div class="acts"><a class="btn big cta" href="#">Quero meu acesso agora<i>→</i></a></div>
+    <p class="micro">Acesso imediato · Pagamento seguro · 7 dias de garantia</p>
+    <div class="chips"><span><b>Acesso</b> imediato</span><span>Sem capital próprio</span><span>Sem largar o que você faz</span><span><b>7 dias</b> de garantia</span></div>
+  </div>
+  <figure class="person" style="position:relative">
+    <img width="1080" height="1080" fetchpriority="high" decoding="async" src="https://sala.benhurcorretordegraos.com.br/_next/image?url=%2Fimages%2Fbenhur.webp&w=1080&q=75" alt="Benhur Willian, especialista em corretagem de grãos">
+    <figcaption><small>Quem vai te mostrar o caminho</small><strong>Benhur Willian</strong><span class="s">Corretor de grãos há 11 anos</span></figcaption>
+    <div class="float f1">Prática real<b>11 anos</b></div>
+    <div class="float f2">Corretores<b>+2.450</b></div>
+  </figure>
+</div></header>
+
+<div class="ticker" aria-hidden="true"><div id="tk"></div></div>
+
+<div class="w stats rv">
+  <div class="stat"><strong>11</strong><span>anos de operação real de corretagem</span></div>
+  <div class="stat"><strong>+2.450</strong><span>corretores formados</span></div>
+  <div class="stat"><strong>12</strong><span>aulas com o caminho completo</span></div>
+</div>
+
+<!-- DOBRA 2 -->
+<section class="mirror" id="realidade"><div class="w">
+  <div class="mirror-g rv"><div><p class="tag">A realidade</p><h2>Você vê o agro girando milhões na sua região. Mas <span class="serif">o seu bolso não sente isso.</span></h2></div>
+  <div><p>Você vê a safra saindo, os caminhões carregados, o dinheiro rodando bem ao seu lado todos os dias. Talvez você trabalhe dentro disso: agrônomo, classificador, vendedor de insumos, corretor de imóveis. Talvez trabalhe em outra área, mas vive perto desse mercado e sabe que ali tem oportunidade.</p>
+  <p>E mesmo assim, no fim do mês, a conta não acompanha o esforço. Você trabalha de segunda a segunda, depende de um salário com teto definido por outra pessoa ou só ganha mais se trabalhar mais horas.</p>
+  <p>Sobra pouco tempo pro que realmente importa: levar seu filho na escola, almoçar em casa, estar presente nas apresentações de escola, viajar com a família, ter um fim de semana tranquilo, poder levar sua família pra jantar em lugar bacana.</p></div></div>
+  <div class="mirror-g rv" style="margin-top:56px"><div><p style="font-size:clamp(24px,2.6vw,34px);font-weight:600;letter-spacing:-.03em;line-height:1.15;color:#0c1110">E se nada mudar? Daqui a 3 anos a história é a mesma: mesma renda, mesma correria, mesmo "ano que vem eu vejo isso".</p></div>
+  <div><p>O arrependimento que mais escuto dos alunos não é sobre dinheiro. É sobre o tempo que perderam enrolando pra começar.</p>
+  <p><strong>Agora presta atenção, porque quase ninguém te conta isso:</strong> você não ganha pouco por falta de esforço nem de competência. Você ganha pouco porque, na maioria das profissões, o que você recebe é proporcional ao tamanho do negócio em que você está diretamente envolvido. E a sua função, hoje, fica longe de onde o dinheiro grande realmente se move.</p>
+  <p>Na corretagem de grãos, um único negócio fechado movimenta milhões, e é em cima disso que sai a sua comissão.</p></div></div>
+  <p class="q rv">Será que existe uma forma de ganhar mais dentro desse mercado, sem precisar de capital e sem começar do zero em outra área?</p>
+  <div class="big rv">Existe<span>.</span></div>
+  <p class="close rv">Conectando quem vende grão a quem compra e recebendo uma comissão por negócio fechado. Isso não acontece sozinho nem de um dia para o outro: exige aprender o método e se dedicar. Mas o que você precisa pra começar, você provavelmente já tem: uma região que produz, um telefone e a vontade de mudar de vida.</p>
+  <p class="close trust rv">Eu sei o que você pode estar pensando: "mais um curso que promete e não entrega". Por isso aqui não tem milagre. Tem um passo a passo.</p>
+  <div class="proof rv">
+    <button class="thumb" data-v="y4wULmXWjvU" aria-label="Reproduzir depoimento do Givanildo"><img loading="lazy" decoding="async" width="360" height="480" alt="" src="https://sala.benhurcorretordegraos.com.br/images/y4wULmXWjvU.jpg"><span class="pl">▶</span></button>
+    <div><small>Prova rápida · Givanildo</small><p>O Givanildo tinha uma empresa há 15 anos, com 5 funcionários, e estava insatisfeito com o que fazia. Entrou na corretagem de grãos, hoje não tem mais a empresa anterior e já recebeu R$&nbsp;43 mil de comissão em um único negócio.</p></div>
+  </div>
+  <div class="bridge rv"><p>Depois da compra, o acesso chega no seu e-mail na hora. Você assiste às aulas para entender o fluxo completo do mercado e cada etapa até a sua primeira comissão. Em seguida, aplica as estratégias que eu ensino para conseguir os contatos e abordá-los do jeito certo, de forma que eles queiram fazer negócio com você.</p>
+  <a class="btn cta" href="#">Quero meu acesso agora<i>→</i></a></div>
+</div></section>
+
+<!-- DOBRA 3 -->
+<section id="caminho"><div class="w">
+  <div class="head rv"><div><p class="tag">O caminho</p><h2>Você não precisa de capital nem de contatos. <span class="serif">Precisa de um GPS.</span></h2></div>
+  <p>O corretor de grãos não compra nem vende grão com dinheiro próprio. Ele conecta quem tem grão a quem quer comprar. E funciona assim:</p></div>
+  <div class="steps rv">
+    <div class="step"><div class="n">01</div><small>Passo 1</small><h3>O produtor</h3><p>Você liga para o produtor e descobre se ele tem grão disponível.</p></div>
+    <div class="step"><div class="n">02</div><small>Passo 2</small><h3>O comprador</h3><p>Você liga para o comprador e oferta esse grão, já com uma ideia de preço.</p></div>
+    <div class="step"><div class="n">03</div><small>Passo 3</small><h3>A comissão</h3><p>Se o negócio fecha, a comissão é sua.</p></div>
+  </div>
+
+  <div class="buyers rv">
+    <div><h3>Quem compra <span class="serif">o grão?</span></h3>
+    <p>Não é um mistério. Quem compra grão é gente que depende dele todo dia. Todos eles precisam de alguém que leve o grão até eles, com rapidez e no preço certo. <strong>Essa pessoa pode ser você.</strong></p>
+    <p>No módulo 2 do GPS eu mostro onde encontrar esses compradores e os produtores, e como abordá-los.</p></div>
+    <div class="bl"><div>Cooperativas</div><div>Indústrias, como fábricas de ração e esmagadoras</div><div>Tradings e exportadoras</div><div>Armazéns e outros comerciantes de grãos</div></div>
+  </div>
+
+  <div class="two rv">
+    <div class="bx"><small>Sem capital</small><h3>Você não compra o grão.</h3><p>Você não precisa de capital porque não compra o grão: você só intermedia a negociação.</p></div>
+    <div class="bx"><small>Sem contatos</small><h3>Contato se constrói.</h3><p>E se você ainda não conhece ninguém, tudo bem. Como em qualquer negócio, a corretagem tem um processo de prospecção, e é justamente esse processo que eu te ensino.</p></div>
+  </div>
+
+  <div class="sim rv" id="simulador">
+    <div><p class="tag">Faça a sua conta</p><h3>Quanto pode render <span class="serif">uma operação?</span></h3>
+      <p class="eg">Vamos para a conta, com uma operação pequena: <strong>10.000 sacas de soja a R$&nbsp;120</strong> a saca é um negócio de <strong>R$&nbsp;1.200.000</strong>. Como a comissão é por saca negociada, nessa operação ela fica entre <strong>R$&nbsp;5 e R$&nbsp;10 mil</strong>, dependendo do tipo de negociação. E 10 mil sacas ainda é considerado pequeno. Tem negócio de 20 mil, 40 mil sacas.</p>
+      <div class="fld"><label for="sc">Quantas sacas na operação? <output id="o-sc">10.000</output></label><input id="sc" type="range" min="1000" max="100000" step="1000" value="10000"></div>
+      <div class="fld"><label for="cm">Comissão por saca (R$) <output id="o-cm">0,50</output></label><input id="cm" type="range" min="0.2" max="2" step="0.05" value="0.5"></div>
+      <div class="fld"><label for="pr">Preço da saca (R$) <output id="o-pr">120</output></label><input id="pr" type="range" min="60" max="200" step="1" value="120"></div>
+      <div class="fld"><label for="ng">Quantos negócios no mês? <output id="o-ng">1</output></label><input id="ng" type="range" min="1" max="6" step="1" value="1"></div>
+    </div>
+    <div class="out" aria-live="polite">
+      <div class="row"><small>Valor do negócio</small><b id="r-val">R$ 1.200.000</b></div>
+      <div class="row hi"><small>Sua comissão nesse negócio</small><b id="r-com">R$ 5.000</b></div>
+      <div class="row hi m"><small>Sua comissão no mês</small><b id="r-mes">R$ 5.000</b></div>
+      <p>Simulação ilustrativa. A comissão por saca varia conforme o tipo de negociação e os valores não são garantia de ganho.</p>
+    </div>
+  </div>
+  <p class="c rv" style="margin-top:44px;color:var(--mut);max-width:760px;margin-inline:auto;font-size:18px"><strong style="color:var(--tx)">Por que você pode confiar?</strong> Eu sei que você já viu muito curso por aí. Por isso, deixa eu ser direto: o que está no GPS é o que eu faço no meu dia a dia, não é teoria de livro. Mais adiante, eu te conto quem eu sou.</p>
+</div></section>
+
+<!-- DOBRA 4 -->
+<section id="produto" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="w">
+  <div class="head rv"><div><p class="tag">Apresentando</p><h2>GPS do Corretor de Grãos: <span class="serif">o caminho em 12 aulas</span>, da primeira ligação ao primeiro negócio.</h2></div>
+  <p>O GPS do Corretor de Grãos é o guia que eu montei com tudo o que eu faço na minha corretora, passo a passo, para você aprender a profissão sem precisar descobrir tudo sozinho. Serve para quem já trabalha no agro e para quem só vive perto dele e quer entrar.</p></div>
+
+  <div class="stage rv"><div class="sh"><small>ETAPA 01</small><h3>Entender o jogo</h3></div>
+    <div class="mods">
+      <article class="mod"><img loading="lazy" src="assets/mod-01.jpg" alt="Módulo 1: O que um corretor de grãos faz"><div><small>MÓDULO 01</small><h4>O que um corretor de grãos faz</h4><p>O dia a dia da profissão e o papel dele entre quem vende e quem compra.</p></div></article>
+      <article class="mod"><img loading="lazy" src="assets/mod-03.jpg" alt="Módulo 3: Como funciona a corretagem"><div><small>MÓDULO 03</small><h4>Como funciona a corretagem</h4><p>Como uma operação acontece do começo ao fim e de onde vem a comissão.</p></div></article>
+      <article class="mod"><img loading="lazy" src="assets/mod-05.jpg" alt="Módulo 5: O que vendemos e quando vendemos"><div><small>MÓDULO 05</small><h4>O que vendemos e quando vendemos</h4><p>Os principais grãos (soja, milho, sorgo e aveia) e o momento de cada negociação.</p></div></article>
+      <article class="mod"><img loading="lazy" src="assets/mod-06.jpg" alt="Módulo 6: Contrato disponível x contrato futuro"><div><small>MÓDULO 06</small><h4>Contrato disponível x futuro</h4><p>A diferença entre os dois e quando cada um é usado.</p></div></article>
+    </div></div>
+  <div class="stage rv"><div class="sh"><small>ETAPA 02</small><h3>Achar e fechar negócio</h3></div>
+    <div class="mods">
+      <article class="mod"><img loading="lazy" src="assets/mod-02.jpg" alt="Módulo 2: Como encontrar produtores e compradores"><div><small>MÓDULO 02</small><h4>Como encontrar produtores e compradores</h4><p>Onde estão as pessoas que você precisa procurar para fazer negócio.</p></div></article>
+      <article class="mod"><img loading="lazy" src="assets/mod-04.jpg" alt="Módulo 4: Negociação na prática"><div><small>MÓDULO 04</small><h4>Negociação na prática</h4><p>Como conduzir a conversa do primeiro contato até o fechamento.</p></div></article>
+    </div></div>
+  <div class="stage rv"><div class="sh"><small>ETAPA 03</small><h3>Sua realidade</h3></div>
+    <div class="mods">
+      <article class="mod"><img loading="lazy" src="assets/mod-07.jpg" alt="Módulo 7: Dá pra conciliar com o meu emprego?"><div><small>MÓDULO 07</small><h4>Dá pra conciliar com o meu emprego?</h4><p>Como começar sem precisar largar o que você faz hoje.</p></div></article>
+      <article class="mod"><img loading="lazy" src="assets/mod-08.jpg" alt="Módulo 8: Oportunidade de mercado"><div><small>MÓDULO 08</small><h4>Oportunidade de mercado</h4><p>Por que a corretagem de grãos ainda tem espaço para quem está chegando.</p></div></article>
+      <article class="mod"><img loading="lazy" src="assets/mod-10.jpg" alt="Módulo 10: Mentalidade"><div><small>MÓDULO 10</small><h4>Mentalidade</h4><p>A postura que você precisa ter para manter constância e chegar no resultado.</p></div></article>
+    </div></div>
+  <div class="stage rv"><div class="sh"><small>ETAPA 04</small><h3>Confiança e próximo passo</h3></div>
+    <div class="mods">
+      <article class="mod"><img loading="lazy" src="assets/mod-11.jpg" alt="Módulo 11: Conheça a minha corretora"><div><small>MÓDULO 11</small><h4>Conheça a minha corretora</h4><p>Os bastidores de uma operação real de corretagem de grãos.</p></div></article>
+      <article class="mod"><img loading="lazy" src="assets/mod-12.jpg" alt="Módulos 9 e 12: Seu próximo passo"><div><small>MÓDULOS 09 E 12</small><h4>Seu próximo passo</h4><p>O que fazer depois do GPS e como seguir, se quiser ir mais fundo.</p></div></article>
+    </div></div>
+
+  <div class="know rv">
+    <div><p class="tag">Ao final das aulas</p><h3 style="font-size:clamp(28px,3.4vw,44px);margin-bottom:26px">Você vai <span class="serif">saber</span></h3>
+    <ul><li>Por onde começar na corretagem de grãos, mesmo sem experiência.</li><li>Onde encontrar produtores e compradores.</li><li>Como conduzir uma negociação até o fechamento.</li><li>A diferença entre contrato disponível e contrato futuro.</li><li>Quais grãos negociar e em que momento.</li><li>Se, e como, dá para conciliar com o seu emprego atual.</li><li>Como funciona uma corretora de verdade, por dentro.</li></ul></div>
+    <div class="deliv"><h3>Como você recebe</h3>
+      <div class="kk"><span>12 aulas em vídeo</span><span>Área de membros</span><span>1 ano de acesso</span><span>Certificado</span></div>
+      <p>Assim que o pagamento é confirmado, o <strong>acesso chega no seu e-mail na hora</strong>, e você tem 1 ano para assistir. Se por algum motivo você perder o acesso, é só pedir para o suporte, que te envia pelo WhatsApp.</p>
+      <p class="honest">O GPS te mostra o caminho. O resultado vem de você seguir esse caminho e colocar em prática.</p>
+    </div>
+  </div>
+  <p class="c rv" style="margin-top:44px;color:var(--mut);font-size:18px">E além das 12 aulas, você ainda leva 3 bônus que vão acelerar o seu começo. Veja logo abaixo.</p>
+  <div class="c rv" style="margin-top:22px"><a class="btn cta" href="#">Quero meu acesso agora<i>→</i></a></div>
+</div></section>
+
+<!-- QUEM É O BENHUR -->
+<section id="benhur"><div class="w story">
+  <figure class="sp rv"><img loading="lazy" src="assets/benhur-historia.jpg" alt="Benhur Willian segurando uma planta de soja em uma lavoura, com silos ao fundo"><figcaption><small>Quem é o Benhur</small><strong>Benhur Willian</strong></figcaption></figure>
+  <div class="rv"><p class="tag">Quem é o Benhur</p>
+    <h2>Me disseram que eu não tinha futuro. Hoje eu <span class="serif">formo corretores de grãos.</span></h2>
+    <p>Cresci numa família pobre em Fátima do Sul, MS. Perdi meu pai ainda criança e fui criado pela minha mãe, que era doméstica. Na adolescência, a frase que mais escutei foi:</p>
+    <p class="pq">"Esse aí é sem futuro."</p>
+    <p>Fui ajudante de pintor, ajudante de pedreiro, empacotador de mercado. Depois entrei no agro, em serviços gerais num armazém, e virei classificador de grãos. Foi ali que descobri uma profissão que intermediava a compra e a venda de grãos e ganhava <b>comissão por saca negociada</b>.</p>
+    <p>Decidi que seria aquilo que ia mudar a minha vida. Só que não encontrei ninguém para me ensinar. Aprendi na marra, errando e acertando, até achar o caminho.</p>
+    <p>Hoje tenho casa, propriedades rurais, meus filhos estudam em escola particular e tenho um escritório de corretagem consolidado no Mato Grosso do Sul. Já formei <b>mais de 2.450 corretores</b> em pouco mais de 2 anos.</p>
+    <p>Mas o que essa profissão me deu que nenhum bem material supera foi poder almoçar todo dia em casa com a minha esposa e meus filhos e viajar com eles todo ano.</p>
+    <p class="pq">Se um menino sem faculdade, com dificuldade na fala e sem capital chegou aqui, imagina você.</p>
+    <p class="fin">O GPS é o caminho que eu não tive.</p>
+    <a class="btn cta" href="#">Quero meu acesso agora<i>→</i></a>
+  </div>
+</div></section>
+
+<!-- DOBRA 5 -->
+<section id="resultados" style="padding-top:20px"><div class="w">
+  <div class="head rv"><div><p class="tag">Resultados de quem decidiu agir</p><h2>Gente de áreas completamente diferentes. <span class="serif">O mesmo caminho.</span></h2></div>
+  <p>Veja o que aconteceu com alunos que aplicaram o que eu ensino. Eles vieram de profissões diferentes, e muitos nunca tinham trabalhado com grãos. O método que esses alunos aplicaram é o mesmo que você aprende nas aulas do GPS.</p></div>
+  <div class="rail" id="rail"></div>
+  <div class="rail-ctl"><button id="prev" aria-label="Anterior">←</button><button id="next" aria-label="Próximo">→</button></div>
+  <div class="common rv"><h3 style="font-size:clamp(28px,3.4vw,44px)">O que eles têm <span class="serif">em comum?</span></h3>
+    <div><ul><li>Vieram de profissões diferentes: mecânico, faz-tudo, vendedora de carros, dono de PetShop, empresário.</li><li>Todos seguiram um passo a passo, em vez de tentar descobrir tudo sozinhos.</li><li>Todos colocaram o método em prática.</li></ul></div></div>
+  <p class="note">Resultados individuais de alunos do Benhur. Não há garantia de ganho: os valores variam conforme a dedicação e a aplicação do método de cada pessoa.</p>
+  <div class="c rv" style="margin-top:36px"><a class="btn cta" href="#">Quero meu acesso agora<i>→</i></a></div>
+</div></section>
+
+<!-- DOBRA 6 -->
+<section id="oferta" style="background:var(--bg2);border-block:1px solid var(--line)"><div class="w">
+  <div class="head one rv"><div><p class="tag">A oferta</p><h2>Tudo o que você precisa para <span class="serif">dar o primeiro passo</span> na corretagem de grãos.</h2></div></div>
+  <div class="offer">
+    <div>
+      <div class="stack rv">
+        <div class="it main"><small>Produto principal</small><h3>GPS do Corretor de Grãos</h3><span class="v">R$ 297</span><p>As 12 aulas com o caminho completo da corretagem de grãos, na área de membros, com <em>acesso por 1 ano</em> e certificado. O acesso chega no seu e-mail assim que o pagamento é confirmado.</p></div>
+        <div class="it"><small>Bônus</small><h3>14 Estratégias para Encontrar Produtores e Compradores pela Internet</h3><span class="v">R$ 197</span><p>Um documento com as 14 estratégias para encontrar o telefone de produtores rurais e de compradores de grãos pela internet, sem precisar ir pessoalmente à fazenda ou ao escritório do comprador. Na corretora, testamos muito mais estratégias do que isso, e estas 14 foram as que realmente funcionaram. <em>Para você que pensa "como eu acho essas pessoas?".</em></p></div>
+        <div class="it"><small>Bônus</small><h3>Scripts de Ligação do Primeiro Contato ao Fechamento</h3><span class="v">R$ 247</span><p>Os scripts com as falas exatas para falar com produtores e compradores, do primeiro contato até o fechamento do negócio. <em>Para você que pensa "e o que eu falo na hora da ligação?".</em></p></div>
+        <div class="it"><small>Bônus</small><h3>Os Processos da Minha Corretora por Dentro</h3><span class="v">R$ 147</span><p>Todos os processos documentados da minha corretora: prospecção, atendimento, fechamento de negócio, relacionamento com produtores e compradores para fechar mais negócios no futuro, resolução de problemas, como pedir a comissão e como ela cai na conta. Você vê como uma operação real se organiza por dentro e pode usar como base para montar a sua.</p></div>
+      </div>
+      <div class="recebe rv"><strong>Como você recebe.</strong> O acesso é liberado automaticamente, assim que o pagamento é confirmado, e chega no seu e-mail na hora. Você tem 1 ano para assistir. Os bônus ficam indicados dentro da própria plataforma, todos em PDF. Se perder o acesso ou não encontrar algo, o suporte atende de segunda a segunda, em horário comercial, e reenvia pelo WhatsApp.</div>
+    </div>
+    <aside class="pricecard rv">
+      <div class="pc-top"><small>Valor total</small><div class="was">De <s>R$ 888</s></div><small style="margin-top:14px;display:block">Seu investimento hoje</small>
+        <div class="now"><span>R$</span><b>19</b></div><p class="par"><strong>à vista no Pix</strong><br>ou 4x de R$ 5,16 no cartão</p></div>
+      <div class="pc-bot">
+        <p class="bal"><strong>Para colocar na balança:</strong> uma única operação de 10.000 sacas pode render de R$ 5 mil a R$ 10 mil de comissão, como mostrei no exemplo. O GPS custa R$ 19.<small>Exemplo ilustrativo. Os valores variam conforme a negociação e não são garantia de ganho.</small></p>
+        <div class="urg"><b>Oferta válida somente hoje</b>
+          <div class="bar"><i id="bar"></i></div>
+          <small>Os bônus são limitados a 100 pessoas, e restam <span id="left">57</span> vagas.</small>
+          <small class="after">Depois de hoje, o GPS volta ao preço normal de R$ 297.</small>
+          <div class="cd" data-cd hidden><div><b data-d>00</b><span>dias</span></div><div><b data-h>00</b><span>horas</span></div><div><b data-m>00</b><span>min</span></div><div><b data-s>00</b><span>seg</span></div></div>
+        </div>
+        <a class="btn big full cta" href="#">Quero meu acesso por R$ 19<i>→</i></a>
+        <p class="micro">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
+      </div>
+    </aside>
+  </div>
+</div></section>
+
+<!-- DOBRA 7 -->
+<section class="gar" id="garantia"><div class="w gar-g">
+  <div class="seal rv"><svg viewBox="0 0 300 300" aria-hidden="true"><defs><path id="cc" d="M150 150 m-118 0 a118 118 0 1 1 236 0 a118 118 0 1 1 -236 0"/></defs>
+    <circle cx="150" cy="150" r="146" fill="none" stroke="#26322e" stroke-width="2"/><circle cx="150" cy="150" r="96" fill="#121917" stroke="#c8f542" stroke-width="2"/>
+    <g class="ring"><text fill="#93a39b" font-family="JetBrains Mono,monospace" font-size="13" letter-spacing="5.2"><textPath href="#cc">GARANTIA INCONDICIONAL · SEM BUROCRACIA · RISCO ZERO · </textPath></text></g></svg>
+    <div class="in"><div><b>7</b><span>dias</span></div></div></div>
+  <div class="rv"><p class="tag">Garantia</p><h2>Você não corre <span class="serif">nenhum risco.</span></h2>
+    <p>Eu quero que você decida com tranquilidade. Por isso, o GPS do Corretor de Grãos tem 7 dias de garantia incondicional.</p>
+    <p>Entre na área de membros, assista às aulas, veja os bônus e confira tudo com os seus próprios olhos. Se por qualquer motivo você achar que não é para você, é só pedir o reembolso dentro de 7 dias e devolvemos o seu dinheiro.</p>
+    <div class="how"><div><b>01</b>Fale com o suporte, de segunda a segunda, em horário comercial.</div><div><b>02</b>Diga que quer o reembolso.</div><div><b>03</b>Pronto. Sem burocracia e sem precisar explicar o motivo.</div></div>
+    <p class="risk">O risco é todo meu. Você só fica com o GPS se ele fizer sentido para você.</p>
+    <a class="btn cta" href="#">Quero meu acesso por R$ 19<i>→</i></a>
+    <p class="micro">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
+  </div>
+</div></section>
+
+<!-- DOBRA 8 -->
+<section style="padding-top:96px"><div class="final rv" id="final">
+  <p class="tag" style="justify-content:center">A decisão é sua</p>
+  <h2>Você pode continuar como está. Ou pode <span class="serif">dar o primeiro passo hoje.</span></h2>
+  <div class="m"><p>Você já viu como funciona o mercado de grãos. Já viu que não precisa de capital para começar e que contato se constrói. Já viu o caminho completo em 12 aulas, os 3 bônus e a garantia de 7 dias.</p>
+  <p>Agora sobra uma pergunta simples: daqui a alguns anos, você vai querer ter começado hoje ou continuar dizendo "ano que vem eu vejo isso"?</p>
+  <p>O GPS do Corretor de Grãos custa R$&nbsp;19. O risco é todo meu, porque você tem 7 dias para testar e pedir o dinheiro de volta se não fizer sentido.</p></div>
+  <div class="urg"><b>Oferta válida somente hoje</b>
+    <div class="bar"><i id="bar2"></i></div>
+    <small>Os bônus são limitados a 100 pessoas, e restam <span id="left2">57</span> vagas.</small>
+    <small class="after">Depois de hoje, o GPS volta ao preço normal de R$ 297.</small>
+    <div class="cd" data-cd hidden><div><b data-d>00</b><span>dias</span></div><div><b data-h>00</b><span>horas</span></div><div><b data-m>00</b><span>min</span></div><div><b data-s>00</b><span>seg</span></div></div>
+  </div>
+  <p class="m"><span class="hl">Eu te vejo lá dentro.</span></p>
+  <div class="chips"><span><b>Só hoje</b></span><span>R$ 19 ou 4x de R$ 5,16</span><span><b>7 dias</b> de garantia</span><span>Acesso imediato</span></div>
+  <a class="btn big cta" href="#">Quero meu acesso por R$ 19<i>→</i></a>
+</div></section>
+
+<!-- DOBRA 9 -->
+<section id="faq"><div class="w">
+  <div class="head one rv"><div><p class="tag">Perguntas frequentes</p><h2>Ainda tem dúvida? Veja se alguma dessas <span class="serif">é a sua.</span></h2></div></div>
+  <div class="faq rv">
+    <details><summary>Preciso ter experiência ou ser do agro?</summary><p>Não. As aulas começam pelo básico, explicando o que um corretor de grãos faz, e foram feitas tanto para quem já trabalha no agro quanto para quem está entrando agora.</p></details>
+    <details><summary>Preciso de dinheiro para começar?</summary><p>Não. Você não compra o grão: você só intermedia a negociação entre quem vende e quem compra.</p></details>
+    <details><summary>Eu não conheço produtores nem compradores. E agora?</summary><p>Tudo bem, contato se constrói. O módulo 2 mostra onde encontrar produtores e compradores, e os bônus completam: as 14 estratégias para achar telefone pela internet e os scripts com as falas para ligar.</p></details>
+    <details><summary>Dá para fazer sem largar o meu emprego?</summary><p>O módulo 7 é dedicado exatamente a isso: se dá e como conciliar a corretagem com o seu trabalho atual.</p></details>
+    <details><summary>Em quanto tempo vem a primeira comissão?</summary><p>Depende de quanto você aplica o que aprende. O GPS te dá o caminho, e o ritmo é seu.</p></details>
+    <details><summary>Como eu recebo o acesso?</summary><p>Assim que o pagamento é confirmado, o acesso chega no seu e-mail na hora, automaticamente. Você acessa pela área de membros e tem 1 ano para assistir.</p></details>
+    <details><summary>Os bônus estão inclusos?</summary><p>Sim. Os três bônus ficam indicados dentro da própria plataforma, em PDF. Se você não encontrar algum, é só chamar o suporte.</p></details>
+    <details><summary>Tem certificado?</summary><p>Sim, você recebe certificado.</p></details>
+    <details><summary>Como funciona o pagamento?</summary><p>R$ 19 à vista no Pix ou 4x de R$ 5,16 no cartão. O pagamento é processado pela plataforma Cakto.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia incondicional. É só pedir o reembolso ao suporte, e devolvemos o seu dinheiro.</p></details>
+    <details><summary>Tem suporte?</summary><p>Sim, de segunda a segunda, em horário comercial.</p></details>
+  </div>
+  <div class="ps rv">
+    <p><b>P.S.</b>O GPS do Corretor de Grãos mostra o caminho em 12 aulas, com 3 bônus, por R$&nbsp;19 e com 7 dias de garantia. A oferta está disponível somente hoje, e os bônus são limitados. Restam <span id="left3">57</span> vagas.</p>
+    <p><b>P.P.S.</b>Daqui a alguns anos, você vai querer ter começado hoje. Dá o primeiro passo.</p>
+    <a class="btn cta" href="#">Quero meu acesso por R$ 19<i>→</i></a>
+  </div>
+</div></section>
+
+<footer><div class="w">
+  <div class="l"><div><strong style="color:var(--tx)">Benhur Willian</strong><br>Corretor de grãos</div><div>GPS do Corretor de Grãos<br>© 2026 Todos os direitos reservados</div></div>
+  <p class="law">Os resultados apresentados são individuais, de alunos do Benhur, e não representam garantia de ganho. Os valores variam conforme a dedicação e a aplicação do método de cada pessoa.</p>
+</div></footer>
+
+<div class="dock" id="dock"><a class="btn cta" href="#">Quero meu acesso por R$ 19<i>→</i></a></div>
+<div class="modal" id="modal"><div><button aria-label="Fechar">×</button><iframe title="Depoimento" allow="autoplay;encrypted-media;fullscreen" allowfullscreen></iframe></div></div>
+
+<script>
+(function(){
+/* ===== CONFIGURAÇÃO (edite aqui) ===== */
+var CONFIG={
+  checkoutUrl:'https://pay.cakto.com.br/69miqfh', // link do checkout da Cakto
+  offerEnd:null,            // fim REAL da oferta, ex.: '2026-10-20T23:59:59-03:00'. null = esconde o contador
+  bonusTotal:100,           // total de vagas com bônus
+  bonusLeft:57              // vagas restantes (mantenha atualizado)
+};
+/* ===================================== */
+var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
+var SITE='https://sala.benhurcorretordegraos.com.br/images/';
+$$('.cta').forEach(function(a){a.href=CONFIG.checkoutUrl});
+// vagas
+var pct=Math.round((CONFIG.bonusTotal-CONFIG.bonusLeft)/CONFIG.bonusTotal*100);
+['bar','bar2'].forEach(function(id){var e=document.getElementById(id);if(e)e.style.width=pct+'%'});
+['left','left2','left3'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=CONFIG.bonusLeft});
+// depoimentos
+var T=[
+['Q7LIwzpbqMo','Wender · Ituiara, GO','De faz-tudo a R$ 24.000 no primeiro mês.','Ele já tinha vendido seguro, instalado ar-condicionado e feito de tudo um pouco para pagar as contas. No primeiro mês de atuação como corretor de grãos, fechou 2 lotes e recebeu R$ 24.000 em comissão.'],
+['93AOhsO25Yc','Alessandro · Ponta Porã, MS','Trocou a chave de boca pela corretagem.','Alessandro era mecânico, trabalhava muito e via os sonhos ficarem sempre para depois. Na primeira negociação como corretor, fechou 20 mil sacas e recebeu R$ 10.000 de comissão. Hoje tem a casa própria construída e dois carros novos, tudo com o dinheiro da corretagem.'],
+['WryhtoeeML4','Thaise','Saiu da concessionária e fez R$ 20.000 no primeiro mês.','Thaise trocou a venda de carros pela corretagem de grãos e cresceu tão rápido que, hoje, além de intermediar, também compra grãos com capital próprio.'],
+['E3d2WIAk7ZU','Lara · Goiânia, GO','27 anos. Menos de 1 ano. 300 mil sacas fechadas por telefone em outro estado.','Sem sair de Goiânia, Lara fechou um negócio em Sorriso (MT) usando só o telefone e o método.'],
+['y4wULmXWjvU','Givanildo César','15 anos em um negócio que o deixava infeliz. Hoje vive de corretagem de grãos.','Givanildo tinha uma empresa há 15 anos, com 5 funcionários, e não aguentava mais a rotina. Entrou na corretagem de grãos e já recebeu R$ 43 mil de comissão em um único negócio.'],
+['rMpSm1FQXuI','Aluno do Benhur · dono de PetShop','R$ 68.000 de comissão no primeiro mês como corretor.','Ele nunca tinha trabalhado com grãos. Enquanto cuidava do seu PetShop, descobriu a corretagem e, no primeiro mês, recebeu R$ 68.000 em comissões.']];
+var rail=$('#rail');
+T.forEach(function(t,i){var a=document.createElement('article');a.className='vid rv';
+a.innerHTML='<button class="thumb" data-v="'+t[0]+'" aria-label="Reproduzir depoimento de '+t[1]+'"><img loading="lazy" decoding="async" width="360" height="480" alt="" src="'+SITE+t[0]+'.jpg"><span class="n">HISTÓRIA 0'+(i+1)+'</span><span class="pl">▶</span><span class="cap"><small>'+t[1]+'</small><h3>'+t[2]+'</h3></span></button><p>'+t[3]+'</p>';rail.appendChild(a)});
+$('#next').onclick=function(){rail.scrollBy({left:360,behavior:'smooth'})};$('#prev').onclick=function(){rail.scrollBy({left:-360,behavior:'smooth'})};
+// modal de vídeo
+var m=$('#modal'),f=$('iframe',m);
+document.addEventListener('click',function(e){var b=e.target.closest('.thumb');if(!b||!b.dataset.v)return;f.src='https://www.youtube.com/embed/'+b.dataset.v+'?autoplay=1&rel=0';m.classList.add('on')});
+var cl=function(){m.classList.remove('on');f.src=''};$('button',m).onclick=cl;m.onclick=function(e){if(e.target===m)cl()};addEventListener('keydown',function(e){if(e.key==='Escape')cl()});
+// ticker
+var items=['12 aulas','3 bônus','Sem capital próprio','Acesso imediato','1 ano de acesso','Certificado','7 dias de garantia','+2.450 corretores','11 anos de prática real'];
+var h='';items.forEach(function(x){h+='<span><em>●</em> '+x+'</span>'});$('#tk').innerHTML=h+h+h+h;
+// progresso, dock, reveal
+var pr=$('#prog'),dk=$('#dock'),hide=[$('#oferta'),$('#garantia'),$('#final')];
+function sc(){var d=document.documentElement;pr.style.width=(scrollY/(d.scrollHeight-innerHeight)*100)+'%';
+ var skip=hide.some(function(e){var r=e.getBoundingClientRect();return r.top<innerHeight*.6&&r.bottom>innerHeight*.2});
+ dk.classList.toggle('on',scrollY>700&&!skip)}
+addEventListener('scroll',sc,{passive:true});sc();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+$$('.rv').forEach(function(n){io.observe(n)});
+// simulador
+var fmt=function(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0})};
+var sc_=$('#sc'),cm=$('#cm'),pr_=$('#pr'),ng=$('#ng');
+function sim(){var s=+sc_.value,c=+cm.value,p=+pr_.value,n=+ng.value;
+ $('#o-sc').textContent=s.toLocaleString('pt-BR');$('#o-cm').textContent=c.toFixed(2).replace('.',',');$('#o-pr').textContent=p;$('#o-ng').textContent=n;
+ $('#r-val').textContent=fmt(s*p);$('#r-com').textContent=fmt(s*c);$('#r-mes').textContent=fmt(s*c*n)}
+[sc_,cm,pr_,ng].forEach(function(i){i.addEventListener('input',sim)});sim();
+// contagem (só se houver data real de fim)
+if(CONFIG.offerEnd){var END=new Date(CONFIG.offerEnd),z=function(n){return String(n).padStart(2,'0')};
+ $$('[data-cd]').forEach(function(b){b.hidden=false});
+ (function t(){var s=Math.max(0,Math.floor((END-Date.now())/1000));
+  $$('[data-cd]').forEach(function(b){$('[data-d]',b).textContent=z(Math.floor(s/86400));$('[data-h]',b).textContent=z(Math.floor(s%86400/3600));$('[data-m]',b).textContent=z(Math.floor(s%3600/60));$('[data-s]',b).textContent=z(s%60)});
+  if(s>0)setTimeout(t,1000)})()}
+})();
+</script>
+</body>
+</html>
