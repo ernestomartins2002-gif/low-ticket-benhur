@@ -138,9 +138,9 @@ section{padding:96px 0}
 /* caminho */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative}
 .step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;position:relative;transition:.35s}
-.step:hover{border-color:var(--lime2);transform:translateY(-4px)}
+.step:hover,.step.on{border-color:var(--lime2);transform:translateY(-4px)}
 .step .n{font-size:84px;font-weight:800;color:transparent;-webkit-text-stroke:1px var(--line);line-height:1;letter-spacing:-.05em;transition:.35s}
-.step:hover .n{-webkit-text-stroke-color:var(--lime)}
+.step:hover .n,.step.on .n{-webkit-text-stroke-color:var(--lime)}
 .step small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
 .step h3{margin:14px 0 8px;font-size:24px}.step p{color:var(--mut);font-size:16px}
 .step::after{content:"→";position:absolute;right:-18px;top:50%;width:32px;height:32px;border-radius:50%;background:var(--lime);color:#0c1110;display:grid;place-items:center;z-index:2;font-weight:800}
@@ -505,9 +505,15 @@ html{-webkit-text-size-adjust:100%}
   .buyers{margin-top:48px;gap:24px}
   .bl div{padding:16px 16px 16px 46px;font-size:16px}.bl div::before{left:16px;top:21px}
   .two .bx{padding:22px}
-  .sim{margin-top:48px;padding:20px;border-radius:24px;gap:24px}
-  .sim .eg{font-size:15.5px}
-  .out{padding:20px;border-radius:18px}
+  .sim{margin-top:40px;padding:16px;border-radius:22px;gap:14px}
+  .sim .tag{margin-bottom:10px}
+  .sim h3{font-size:25px}
+  .sim .eg{font-size:14px;line-height:1.45;margin-top:10px}
+  .sim .fld{margin-top:12px}.sim .fld label{font-size:12.5px;margin-bottom:6px}
+  .out{padding:14px 16px;border-radius:16px;gap:10px}
+  .out .row b{font-size:23px}
+  .out .row.hi{padding-top:10px}.out .row.hi b{font-size:30px}.out .row.hi.m b{font-size:27px}
+  .out p{font-size:10.5px;line-height:1.4}
   /* produto: módulos em carrossel horizontal */
   .stage{padding:26px 0;gap:14px}
   .stage .sh h3{font-size:22px;margin-top:6px}
@@ -765,13 +771,12 @@ html{-webkit-text-size-adjust:100%}
       <div class="fld"><label for="sc">Quantas sacas na operação? <output id="o-sc">10.000</output></label><input id="sc" type="range" min="1000" max="100000" step="1000" value="10000"></div>
       <div class="fld"><label for="cm">Comissão por saca (R$) <output id="o-cm">0,50</output></label><input id="cm" type="range" min="0.2" max="2" step="0.05" value="0.5"></div>
       <div class="fld"><label for="pr">Preço da saca (R$) <output id="o-pr">120</output></label><input id="pr" type="range" min="60" max="200" step="1" value="120"></div>
-      <div class="fld"><label for="ng">Quantos negócios no mês? <output id="o-ng">1</output></label><input id="ng" type="range" min="1" max="6" step="1" value="1"></div>
+      <div class="fld"><label for="ng">Quantos negócios no mês? <output id="o-ng">1</output></label><input id="ng" type="range" min="1" max="15" step="1" value="1"></div>
     </div>
     <div class="out" aria-live="polite">
       <div class="row"><small>Valor do negócio</small><b id="r-val">R$ 1.200.000</b></div>
       <div class="row hi"><small>Sua comissão nesse negócio</small><b id="r-com">R$ 5.000</b></div>
       <div class="row hi m"><small>Sua comissão no mês</small><b id="r-mes">R$ 5.000</b></div>
-      <p>Simulação ilustrativa. A comissão por saca varia conforme o tipo de negociação e os valores não são garantia de ganho.</p>
     </div>
   </div>
   <p class="c rv" style="margin-top:44px;color:var(--mut);max-width:760px;margin-inline:auto;font-size:18px"><strong style="color:var(--tx)">Por que você pode confiar?</strong> Eu sei que você já viu muito curso por aí. Por isso, deixa eu ser direto: o que está no GPS é o que eu faço no meu dia a dia, não é teoria de livro. Mais adiante, eu te conto quem eu sou.</p>
@@ -953,12 +958,41 @@ var CONFIG={
   offerEnd:null,            // fim REAL da oferta, ex.: '2026-10-20T23:59:59-03:00'. null = esconde o contador
   bonusTotal:100,           // total de vagas com bônus
   bonusLeft:57,             // vagas restantes (mantenha atualizado)
-  autoDate:true             // mostra a data de HOJE (horário de Brasília) ao lado de "oferta válida somente hoje"; muda sozinha todo dia
+  autoDate:true,            // mostra a data de HOJE (horário de Brasília) ao lado de "oferta válida somente hoje"; muda sozinha todo dia
+  pixelId:'1281380123924316',               // ID do pixel da Meta (só números). Vazio = nenhum rastreamento
+  capiUrl:''                // endereço da ponte da API de Conversões (Cloudflare Worker). Vazio = só o pixel. NUNCA coloque o token aqui
 };
 /* ===================================== */
 var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
 var SITE='https://sala.benhurcorretordegraos.com.br/images/';
-$$('.cta').forEach(function(a){a.href=CONFIG.checkoutUrl});
+// leva os parâmetros do anúncio (utm_* e fbclid) para o checkout, para a Meta ligar a compra ao clique
+(function(){
+  var q=[];try{new URLSearchParams(location.search).forEach(function(v,k){if(/^(utm_|fbclid$|src$|sck$)/.test(k))q.push(encodeURIComponent(k)+'='+encodeURIComponent(v))})}catch(e){}
+  var url=CONFIG.checkoutUrl+(q.length?(CONFIG.checkoutUrl.indexOf('?')<0?'?':'&')+q.join('&'):'');
+  $$('.cta').forEach(function(a){a.href=url});
+})();
+// Meta: Pixel + API de Conversões (via ponte; o token fica no servidor, nunca na página)
+var TRK=(function(){
+  if(!CONFIG.pixelId||!/^\d{8,20}$/.test(CONFIG.pixelId))return{ev:function(){}};
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init',CONFIG.pixelId);
+  function ck(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):''}
+  function fbc(){var c=ck('_fbc');if(c)return c;try{var id=new URLSearchParams(location.search).get('fbclid');return id?'fb.1.'+Date.now()+'.'+id:''}catch(e){return''}}
+  function ev(name,custom){
+    var id=name+'.'+Date.now()+'.'+Math.random().toString(36).slice(2,10);
+    fbq('track',name,custom||{},{eventID:id});          // pixel (navegador)
+    if(CONFIG.capiUrl){                                   // API de Conversões (servidor), com o mesmo event_id para não contar em dobro
+      try{fetch(CONFIG.capiUrl,{method:'POST',keepalive:true,headers:{'Content-Type':'text/plain'},body:JSON.stringify({event_name:name,event_id:id,event_time:Math.floor(Date.now()/1000),url:location.href,fbp:ck('_fbp'),fbc:fbc(),custom:custom||{}})})}catch(e){}
+    }
+  }
+  return{ev:ev};
+})();
+TRK.ev('PageView');
+(function(){   // ViewContent: quando a pessoa já rolou cerca de 30% da página
+  var done=false;function chk(){if(done)return;var h=document.documentElement.scrollHeight-innerHeight;if(h>0&&scrollY/h>=0.3){done=true;TRK.ev('ViewContent',{content_name:'GPS do Corretor de Grãos'});removeEventListener('scroll',chk)}}
+  addEventListener('scroll',chk,{passive:true});
+})();
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.cta');if(a)TRK.ev('InitiateCheckout',{content_name:'GPS do Corretor de Grãos',value:19,currency:'BRL'})},true);
 // vagas
 var pct=Math.round((CONFIG.bonusTotal-CONFIG.bonusLeft)/CONFIG.bonusTotal*100);
 ['bar','bar2'].forEach(function(id){var e=document.getElementById(id);if(e)e.style.width=pct+'%'});
@@ -1122,6 +1156,13 @@ if(CONFIG.offerEnd){var END=new Date(CONFIG.offerEnd),z=function(n){return Strin
     cutItems.forEach(function(e,i){e.classList.toggle('x',i<k)});
   }
   addEventListener('scroll',updCut,{passive:true});addEventListener('resize',updCut);updCut();
+  // passos 01-03: acendem sozinhos quando chegam perto do meio da tela, sem precisar tocar
+  var stepEls=$$('.step');
+  function updSteps(){
+    var H=innerHeight;
+    stepEls.forEach(function(e){var r=e.getBoundingClientRect();e.classList.toggle('on',reduce||(r.top+r.bottom)/2<=H*0.62)});
+  }
+  addEventListener('scroll',updSteps,{passive:true});addEventListener('resize',updSteps);updSteps();
 })();
 })();
 </script>
