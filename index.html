@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>GPS do Corretor de Grãos | O caminho em 12 aulas</title>
 <meta name="description" content="O caminho em 12 aulas para começar na corretagem de grãos, com 3 bônus e 7 dias de garantia. Com Benhur Willian.">
-<meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0c1110">
 <link rel="preload" as="image" href="https://sala.benhurcorretordegraos.com.br/_next/image?url=%2Fimages%2Fbenhur.webp&w=1080&q=75" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,13 +46,15 @@ nav.top .btn{padding:4px 4px 4px 18px;font-size:14px}nav.top .btn i{width:34px;h
 .prog{position:fixed;top:0;left:0;height:3px;background:var(--lime);width:0;z-index:99}
 /* hero */
 .hero{padding:150px 0 70px;position:relative;overflow:hidden;background:radial-gradient(700px 500px at 85% 20%,#c8f54222,transparent 60%),radial-gradient(500px 400px at 0 80%,#ff9f1c18,transparent 60%)}
-.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;opacity:.25;mask-image:radial-gradient(ellipse at 70% 30%,#000,transparent 70%);pointer-events:none}
-.route{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.5;pointer-events:none}
-.route path{stroke:var(--lime);stroke-width:1.5;fill:none;stroke-dasharray:3 9;stroke-linecap:round;animation:dash 40s linear infinite}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(#3d5046 1px,transparent 1px),linear-gradient(90deg,#3d5046 1px,transparent 1px);background-size:64px 64px;opacity:.25;mask-image:radial-gradient(ellipse 95% 85% at 62% 38%,#000 35%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 95% 85% at 62% 38%,#000 35%,transparent 100%);pointer-events:none}
+.route{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.75;pointer-events:none}
+.route path{stroke:var(--lime);stroke-width:2;fill:none;stroke-dasharray:3 9;stroke-linecap:round;animation:dash 40s linear infinite}
 @keyframes dash{to{stroke-dashoffset:-600}}
 .hero-g{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;position:relative;z-index:1}
 .hero p.lede{margin:28px 0 36px}
 .acts{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.micro.vis{color:var(--tx);font-weight:600;font-size:13.5px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}.micro.vis span{white-space:nowrap}.micro.vis span+span::before{content:"·";margin-right:8px;color:var(--mut)}.micro.vis .lock{flex:none;color:var(--lime)}
+.chips.vis span{color:var(--tx);font-weight:600;font-size:14px;border-color:#c8f54266;background:#c8f5421a}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
 .chips span{font-size:13px;border:1px solid var(--line);border-radius:8px;padding:6px 12px;color:var(--mut)}
 .chips b{color:var(--tx)}
@@ -95,6 +96,30 @@ section{padding:96px 0}
 .q{margin-top:60px;font-size:clamp(24px,3vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1.15;max-width:960px}
 .existe{font-size:clamp(70px,13vw,190px);font-weight:800;letter-spacing:-.06em;line-height:.9;margin-top:36px}
 .existe span{color:#3c7a00}
+.mirror .exg{margin-top:14px;max-width:820px;color:#0c1110}
+.exg-top{font-size:17px;line-height:1.35;font-weight:600;margin-bottom:12px}.exg-top strong{font-weight:800}
+.exg-flow{display:flex;align-items:stretch;justify-content:space-between;gap:4px}
+.exn{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;background:#fff;border:1px solid #b9c4b5;border-radius:16px;padding:8px 5px;font-size:12.5px;font-weight:700;line-height:1.15}
+.exn b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#e6ede0;color:#3c7a00}
+.exn em{display:block;font-style:normal;font-weight:600;font-size:10.5px;margin-top:2px;opacity:.85}
+.exn.you{background:#0c1110;border-color:#0c1110;color:#eef2ea;box-shadow:0 10px 26px #0c111033;transform:translateY(-3px)}
+.exn.you b{background:var(--lime);color:#0c1110}.exn.you em{color:var(--lime);opacity:1}
+.exa{flex:none;align-self:center;color:#3c7a00}
+.exa path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4 4;animation:exdash 1s linear infinite}
+.exa path+path{stroke-dasharray:none;animation:none}
+@keyframes exdash{to{stroke-dashoffset:-16}}
+.exg-note{margin-top:12px;font-size:14.5px;line-height:1.4;font-weight:500}.exg-note strong{font-weight:800;background:linear-gradient(transparent 58%,#c8f542 58%)}
+.exg-lead{margin-top:10px;font-size:13px;white-space:nowrap;line-height:1.3;font-weight:700}
+.exg-have{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.exg-have div{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;border:1px dashed #8a9a90;border-radius:14px;padding:7px 4px;font-size:11.5px;font-weight:600;line-height:1.15}
+.exg-have b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#0c1110;color:var(--lime)}
+.exg-have b svg{width:15px;height:15px}
+.exg.rv .exn,.exg.rv .exg-have div{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.exg.rv.in .exn,.exg.rv.in .exg-have div{opacity:1;transform:none}
+.exg.rv.in .exn.you{transform:translateY(-3px)}
+.exg.in .exn:nth-child(3){transition-delay:.35s}.exg.in .exn:nth-child(5){transition-delay:.7s}
+.exg.in .exg-have div:nth-child(1){transition-delay:.9s}.exg.in .exg-have div:nth-child(2){transition-delay:1.05s}.exg.in .exg-have div:nth-child(3){transition-delay:1.2s}
+@media(prefers-reduced-motion:reduce){.exg.rv .exn,.exg.rv .exg-have div{opacity:1;transform:none}.exn.you{transform:none}}
 .mirror .close{font-size:22px;margin-top:14px;color:#0c1110;font-weight:600;max-width:820px}
 .trust{margin-top:34px;font-size:19px;max-width:820px;border-left:3px solid #3c7a00;padding-left:18px;color:#0c1110!important}
 .proof{margin-top:48px;display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:center;background:#0c1110;color:var(--tx);border-radius:28px;padding:22px}
@@ -125,6 +150,7 @@ section{padding:96px 0}
 .buyers h3{font-size:clamp(28px,3.4vw,44px);line-height:1.05}
 .buyers p{color:var(--mut);margin-top:16px}.buyers p strong{color:var(--tx)}
 .bl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.buyers .bl-t{grid-column:1/-1;font-size:clamp(18px,2vw,22px);font-weight:800;letter-spacing:-.02em;line-height:1.2;color:var(--tx);margin:0 0 2px}.bl-t::after{content:" ↓";color:var(--lime)}
 .bl div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 20px 54px;font-weight:600;font-size:18px;letter-spacing:-.02em;position:relative;line-height:1.25}
 .bl div::before{content:"";position:absolute;left:20px;top:25px;width:14px;height:14px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px #c8f54222}
 @media(max-width:900px){.buyers{grid-template-columns:1fr}.bl{grid-template-columns:1fr}}
@@ -307,16 +333,16 @@ footer .law{font-size:12.5px;max-width:860px;line-height:1.6;border-top:1px soli
 .mirror .sc.on{opacity:1;transform:none}
 .mirror mark{background:linear-gradient(transparent 58%,#c8f542 58%);color:inherit;padding:0 .08em}
 .mirror .sc b{font-weight:800}
-.chk{margin:0 0 64px;background:#0c1110;color:var(--tx);border-radius:28px;padding:clamp(22px,4vw,40px);max-width:880px}
+.chk{margin:0 0 48px;background:#0c1110;color:var(--tx);border-radius:24px;padding:clamp(18px,3vw,30px);max-width:880px}
 .mirror .chk-k{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
-.chk h3{font-size:clamp(26px,3.4vw,40px);line-height:1.05}
-.chk-b{display:grid;gap:10px;margin-top:20px}
-.chk-b button{display:flex;gap:14px;align-items:center;text-align:left;width:100%;background:#161e1b;border:1px solid #26322e;border-radius:16px;padding:16px 18px;font-size:17px;font-weight:600;line-height:1.3;color:#eef2ea;transition:.25s}
+.chk h3{font-size:clamp(22px,2.8vw,32px);line-height:1.05}
+.chk-b{display:grid;gap:8px;margin-top:14px}
+.chk-b button{display:flex;gap:14px;align-items:center;text-align:left;width:100%;background:#161e1b;border:1px solid #26322e;border-radius:14px;padding:11px 14px;font-size:15px;font-weight:600;line-height:1.25;color:#eef2ea;transition:.25s}
 .chk-b button:hover{border-color:var(--lime2)}
-.chk-b button i{flex:none;width:26px;height:26px;border-radius:50%;border:2px solid #4a5a54;display:grid;place-items:center;font-style:normal;color:transparent;font-size:14px;font-weight:800;transition:.25s}
+.chk-b button i{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid #4a5a54;display:grid;place-items:center;font-style:normal;color:transparent;font-size:14px;font-weight:800;transition:.25s}
 .chk-b button[aria-pressed=true]{background:var(--lime);color:#0c1110;border-color:var(--lime);transform:scale(1.015)}
 .chk-b button[aria-pressed=true] i{background:#0c1110;border-color:#0c1110;color:var(--lime)}
-.mirror .chk-r{margin-top:18px;font-family:var(--mono);font-size:13px;line-height:1.5;color:#93a39b;min-height:2.6em}
+.mirror .chk-r{margin-top:12px;font-family:var(--mono);font-size:12px;line-height:1.45;color:#93a39b;min-height:2.9em}
 .mirror .chk-r.hit{color:var(--lime)}
 .cut{margin:0 0 70px;max-width:900px}
 .mirror .cut-t{font-size:clamp(22px,2.8vw,32px);font-weight:600;letter-spacing:-.03em;line-height:1.15;color:#0c1110;margin-bottom:20px}
@@ -451,6 +477,7 @@ html{-webkit-text-size-adjust:100%}
   .btn.big{font-size:16px;padding:7px 7px 7px 22px}.btn.big i{width:46px;height:46px}
   .acts .btn{width:100%;justify-content:space-between}
   .micro{font-size:11px;line-height:1.5}
+  .micro.vis{font-size:12.5px}.chips.vis span{font-size:13px}
   .chips{gap:6px;margin-top:20px}.chips span{font-size:12px;padding:5px 10px}
   .person{aspect-ratio:1/1.08;border-radius:22px}.person img{border-radius:22px}.person::after{border-radius:22px}
   .person figcaption{left:16px;right:16px;bottom:16px}.person strong{font-size:22px}
@@ -552,8 +579,9 @@ html{-webkit-text-size-adjust:100%}
 @media(max-width:600px){
   .scenes{margin:0 0 40px;gap:24px}
   .mirror .sc{font-size:23px}
-  .chk{margin-bottom:44px;border-radius:22px;padding:22px 18px}
-  .chk-b button{padding:14px;font-size:16px}
+  .chk{margin-bottom:36px;border-radius:20px;padding:16px 14px}
+  .chk-b button{padding:10px 12px;font-size:14.5px;gap:11px}
+  .chk h3{font-size:23px}
   .cut{margin-bottom:48px}.cut-l span{font-size:14.5px;padding:8px 13px}
   .then{margin-bottom:48px}
   .then-c{padding:16px 18px}
@@ -613,8 +641,8 @@ html{-webkit-text-size-adjust:100%}
     <h1>Domine a corretagem de grãos e crie uma <span class="serif">nova fonte de renda</span> no agronegócio</h1>
     <p class="lede">A profissão que permite ganhar comissões de <strong class="hl">10 a 30 mil por mês</strong> dentro do mercado que você já conhece, <strong class="hw">sem capital próprio e sem deixar o que você faz hoje.</strong></p>
     <div class="acts"><a class="btn big cta" href="#">Quero meu acesso agora<i>→</i></a></div>
-    <p class="micro">Acesso imediato · Pagamento seguro · 7 dias de garantia</p>
-    <div class="chips"><span><b>Acesso</b> imediato</span><span>Sem capital próprio</span><span>Sem largar o que você faz</span><span><b>7 dias</b> de garantia</span></div>
+    <p class="micro vis"><svg class="lock" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Pagamento seguro</span><span>Acesso imediato</span><span>7 dias de garantia</span></p>
+    <div class="chips vis"><span>Sem capital próprio</span><span>Sem largar o que você faz</span></div>
   </div>
   <figure class="person" style="position:relative">
     <img width="1080" height="1080" fetchpriority="high" decoding="async" src="https://sala.benhurcorretordegraos.com.br/_next/image?url=%2Fimages%2Fbenhur.webp&w=1080&q=75" alt="Benhur Willian, especialista em corretagem de grãos">
@@ -647,16 +675,17 @@ html{-webkit-text-size-adjust:100%}
     <p class="chk-k">Toque nas que são a sua realidade</p>
     <h3>Quantas dessas você vive?</h3>
     <div class="chk-b">
-      <button type="button" aria-pressed="false"><i>✓</i>Trabalho de segunda a segunda</button>
+      <button type="button" aria-pressed="false"><i>✓</i>Trabalho muito e ganho pouco</button>
       <button type="button" aria-pressed="false"><i>✓</i>Dependo de um salário com teto definido por outra pessoa</button>
       <button type="button" aria-pressed="false"><i>✓</i>Só ganho mais se trabalhar mais horas</button>
+      <button type="button" aria-pressed="false"><i>✓</i>Sou escravo do meu próprio negócio</button>
     </div>
     <p class="chk-r" id="chk-r" aria-live="polite">Marque as que fazem parte da sua rotina.</p>
   </div>
 
   <div class="cut rv">
     <p class="cut-t">Sobra pouco tempo pro que realmente importa:</p>
-    <div class="cut-l"><span><u>levar seu filho na escola</u></span><span><u>almoçar em casa</u></span><span><u>estar presente nas apresentações de escola</u></span><span><u>viajar com a família</u></span><span><u>ter um fim de semana tranquilo</u></span><span><u>poder levar sua família pra jantar em lugar bacana</u></span></div>
+    <div class="cut-l"><span><u>poder levar sua família pra jantar em um lugar bacana</u></span><span><u>levar os filhos na escola</u></span><span><u>almoçar em casa todos os dias</u></span><span><u>estar presente nas apresentações de escola</u></span><span><u>viajar com a família nas férias</u></span><span><u>ter fins de semana de lazer sem preocupação com dinheiro</u></span></div>
   </div>
 
   <div class="then rv">
@@ -682,7 +711,22 @@ html{-webkit-text-size-adjust:100%}
   </div>
   <p class="q rv">Será que existe uma forma de ganhar mais dentro desse mercado, sem precisar de capital e sem começar do zero em outra área?</p>
   <div class="existe rv">Existe<span>.</span></div>
-  <p class="close rv">Conectando quem vende grão a quem compra e recebendo uma comissão por negócio fechado. Isso não acontece sozinho nem de um dia para o outro: exige aprender o método e se dedicar. Mas o que você precisa pra começar, você provavelmente já tem: uma região que produz, um telefone e a vontade de mudar de vida.</p>
+  <div class="exg rv" role="group" aria-label="Como funciona: você conecta quem vende grão a quem compra e recebe comissão">
+    <p class="exg-top">Conectando <strong>quem vende grão a quem compra</strong> e recebendo uma <strong>comissão por negócio fechado</strong>.</p>
+    <div class="exg-flow">
+      <div class="exn"><b><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8"/><path d="M12 13c0-4 2.5-6 7-6 0 4-2.5 6-7 6z"/><path d="M12 15c0-3-2-5-6-5 0 3.5 2 5 6 5z"/></svg></b><span>Quem vende grão</span></div>
+      <svg class="exa" viewBox="0 0 40 12" width="30" height="10" aria-hidden="true"><path d="M1 6h34" /><path d="M30 1.500L36 6l-6 4.500"/></svg>
+      <div class="exn you"><b><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></b><span>Você conecta<em>e ganha comissão</em></span></div>
+      <svg class="exa" viewBox="0 0 40 12" width="30" height="10" aria-hidden="true"><path d="M1 6h34" /><path d="M30 1.500L36 6l-6 4.500"/></svg>
+      <div class="exn"><b><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h11v9H2z"/><path d="M13 10h4l3 3v3h-7z"/><circle cx="6.5" cy="17.5" r="1.7"/><circle cx="16.5" cy="17.5" r="1.7"/></svg></b><span>Quem compra</span></div>
+    </div>
+    <p class="exg-note">Não acontece de um dia pro outro: exige <strong>aprender o método e se dedicar</strong>. Mas pra começar, você provavelmente já tem:</p>
+    <div class="exg-have">
+      <div><b><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg></b><span>Uma região que produz</span></div>
+      <div><b><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></b><span>Um telefone</span></div>
+      <div><b><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3.500 5 5.500 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 .3 1.500 1 2 2 2.200C10.500 8 11 5.500 12 3z"/></svg></b><span>Vontade de mudar</span></div>
+    </div>
+  </div>
   <p class="close trust rv">Eu sei o que você pode estar pensando: "mais um curso que promete e não entrega". Por isso aqui não tem milagre. Tem um passo a passo.</p>
   <p class="close leadin rv">Não precisa acreditar só na minha palavra. <strong>Dá o play abaixo</strong> e veja com os seus próprios olhos o que esse mercado já fez por quem começou. <span class="dn" aria-hidden="true">↓</span></p>
   <div class="proof rv">
@@ -707,7 +751,7 @@ html{-webkit-text-size-adjust:100%}
     <div><h3>Quem compra <span class="serif">o grão?</span></h3>
     <p>Não é um mistério. Quem compra grão é gente que depende dele todo dia. Todos eles precisam de alguém que leve o grão até eles, com rapidez e no preço certo. <strong>Essa pessoa pode ser você.</strong></p>
     <p>No módulo 2 do GPS eu mostro onde encontrar esses compradores e os produtores, e como abordá-los.</p></div>
-    <div class="bl"><div>Cooperativas</div><div>Indústrias, como fábricas de ração e esmagadoras</div><div>Tradings e exportadoras</div><div>Cerealistas, armazéns e outros comerciantes de grãos</div><div>Confinamentos e granjas</div></div>
+    <div class="bl"><p class="bl-t">Os compradores de grãos são:</p><div>Cooperativas</div><div>Indústrias, como fábricas de ração e esmagadoras</div><div>Tradings e exportadoras</div><div>Cerealistas, armazéns e outros comerciantes de grãos</div><div>Confinamentos e granjas</div></div>
   </div>
 
   <div class="two rv">
@@ -800,7 +844,6 @@ html{-webkit-text-size-adjust:100%}
   <div class="rail-ctl"><button id="prev" class="mc" type="button" aria-label="Depoimento anterior">←</button><span class="mc-t"><b class="mc-c" id="rc"></b>Deslize para o lado ou toque nas setas para ver os outros alunos</span><button id="next" class="mc" type="button" aria-label="Próximo depoimento">→</button></div>
   <div class="common rv"><h3 style="font-size:clamp(28px,3.4vw,44px)">O que eles têm <span class="serif">em comum?</span></h3>
     <div><ul><li>Vieram de profissões diferentes: mecânico, faz-tudo, vendedora de carros, dono de PetShop, empresário.</li><li>Todos seguiram um passo a passo, em vez de tentar descobrir tudo sozinhos.</li><li>Todos colocaram o método em prática.</li></ul></div></div>
-  <p class="note">Resultados individuais de alunos do Benhur. Não há garantia de ganho: os valores variam conforme a dedicação e a aplicação do método de cada pessoa.</p>
   <div class="c rv" style="margin-top:36px"><a class="btn cta" href="#">Quero meu acesso agora<i>→</i></a></div>
 </div></section>
 
@@ -850,7 +893,7 @@ html{-webkit-text-size-adjust:100%}
     <div class="how"><div><b>01</b>Fale com o suporte, de segunda a segunda, em horário comercial.</div><div><b>02</b>Diga que quer o reembolso.</div><div><b>03</b>Pronto. Sem burocracia e sem precisar explicar o motivo.</div></div>
     <p class="risk">O risco é todo meu. Você só fica com o GPS se ele fizer sentido para você.</p>
     <a class="btn cta" href="#">Quero meu acesso por R$ 19<i>→</i></a>
-    <p class="micro">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
+    <p class="micro vis"><svg class="lock" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Pagamento seguro</span><span>Acesso imediato</span><span>7 dias de garantia</span></p>
   </div>
 </div></section>
 
@@ -897,7 +940,6 @@ html{-webkit-text-size-adjust:100%}
 
 <footer><div class="w">
   <div class="l"><div><strong style="color:var(--tx)">Benhur Willian</strong><br>Corretor de grãos</div><div>GPS do Corretor de Grãos<br>© 2026 Todos os direitos reservados</div></div>
-  <p class="law">Os resultados apresentados são individuais, de alunos do Benhur, e não representam garantia de ganho. Os valores variam conforme a dedicação e a aplicação do método de cada pessoa.</p>
 </div></footer>
 
 <div class="dock" id="dock"><a class="btn cta" href="#">Quero meu acesso por R$ 19<i>→</i></a></div>
