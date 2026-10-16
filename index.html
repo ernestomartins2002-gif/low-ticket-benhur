@@ -872,7 +872,7 @@ html{-webkit-text-size-adjust:100%}
       <div class="pk-now"><span class="pk-cur">R$</span><b class="pk-num">19</b><span class="pk-sub"><strong>à vista</strong>no Pix</span></div>
       <p class="pk-par">ou <strong>4x de R$ 5,16</strong> no cartão</p>
       <p class="pk-save">Você economiza <b>R$ 869</b> (98%)</p>
-      <a class="btn big full cta" href="#">Quero meu acesso por R$ 19<i>→</i></a>
+      <a class="btn big full cta" data-checkout href="#">Quero meu acesso por R$ 19<i>→</i></a>
       <p class="micro pk-micro">Pagamento seguro · Acesso imediato · 7 dias de garantia</p>
       <div class="urg"><b><span>Oferta válida somente hoje<em class="ud" data-today-line></em></span></b>
         <div class="bar"><i id="bar"></i></div>
@@ -969,7 +969,15 @@ var SITE='https://sala.benhurcorretordegraos.com.br/images/';
 (function(){
   var q=[];try{new URLSearchParams(location.search).forEach(function(v,k){if(/^(utm_|fbclid$|src$|sck$)/.test(k))q.push(encodeURIComponent(k)+'='+encodeURIComponent(v))})}catch(e){}
   var url=CONFIG.checkoutUrl+(q.length?(CONFIG.checkoutUrl.indexOf('?')<0?'?':'&')+q.join('&'):'');
-  $$('.cta').forEach(function(a){a.href=url});
+  // só o botão do cartão de preço leva ao checkout; todos os outros "Quero meu acesso" levam até esse cartão
+  $$('.cta').forEach(function(a){
+    if(a.hasAttribute('data-checkout')){a.href=url;return}
+    a.href='#pricecard';
+    a.addEventListener('click',function(e){
+      var c=document.getElementById('pricecard');if(!c)return;
+      e.preventDefault();c.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
 })();
 // Meta: Pixel + API de Conversões (via ponte; o token fica no servidor, nunca na página)
 var TRK=(function(){
@@ -992,7 +1000,7 @@ TRK.ev('PageView');
   var done=false;function chk(){if(done)return;var h=document.documentElement.scrollHeight-innerHeight;if(h>0&&scrollY/h>=0.3){done=true;TRK.ev('ViewContent',{content_name:'GPS do Corretor de Grãos'});removeEventListener('scroll',chk)}}
   addEventListener('scroll',chk,{passive:true});
 })();
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.cta');if(a)TRK.ev('InitiateCheckout',{content_name:'GPS do Corretor de Grãos',value:19,currency:'BRL'})},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.cta[data-checkout]');if(a)TRK.ev('InitiateCheckout',{content_name:'GPS do Corretor de Grãos',value:19,currency:'BRL'})},true);
 // vagas
 var pct=Math.round((CONFIG.bonusTotal-CONFIG.bonusLeft)/CONFIG.bonusTotal*100);
 ['bar','bar2'].forEach(function(id){var e=document.getElementById(id);if(e)e.style.width=pct+'%'});
