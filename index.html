@@ -1045,23 +1045,24 @@ function playVid(b){
   $$('.vplayer').forEach(stopVid);
   var v=document.createElement('div');v._orig=b;
   v.className='vplayer'+(b.closest('.proof')?' pr':'');
-  // celular (iPhone, Android e o navegador interno do Instagram/Facebook): o vídeo começa mudo, que é o que eles permitem tocar sozinho; a pessoa liga o som
   var mob=/Android|iP(hone|ad|od)|Mobile/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1)||(window.matchMedia&&matchMedia('(pointer:coarse)').matches);
-  v.innerHTML='<iframe src="https://www.youtube.com/embed/'+b.dataset.v+'?autoplay=1&rel=0&playsinline=1&enablejsapi=1'+(mob?'&mute=1':'')+'" title="Depoimento" allow="autoplay;encrypted-media;fullscreen;picture-in-picture" allowfullscreen></iframe>'+(mob?'<p class="vhint"></p>':'');
+  // sempre COM som: tenta tocar sozinho; nos celulares/navegadores que bloqueiam (iPhone, Instagram/Facebook), mostra o aviso para tocar no ▶ do próprio vídeo, que toca com som e sem sair da página
+  v.innerHTML='<iframe src="https://www.youtube.com/embed/'+b.dataset.v+'?autoplay=1&rel=0&playsinline=1&modestbranding=1&enablejsapi=1" title="Depoimento" allow="autoplay;encrypted-media;fullscreen;picture-in-picture" allowfullscreen></iframe><p class="vhint"></p>';
   b.parentNode.replaceChild(v,b);
   if(!mob)return;
   var fr=v.querySelector('iframe'),hint=v.querySelector('.vhint'),started=false;
-  function say(t){if(!hint)return;hint.textContent=t;hint.classList.remove('on');void hint.offsetWidth;hint.classList.add('on')}
+  function say(t){hint.textContent=t;hint.classList.remove('on');void hint.offsetWidth;hint.classList.add('on')}
   function onMsg(e){
     if(e.source!==fr.contentWindow)return;
     var d=e.data;if(typeof d==='string'){try{d=JSON.parse(d)}catch(x){return}}
     var st=d&&(d.event==='onStateChange'?d.info:(d.info&&d.info.playerState));
-    if(st===1&&!started){started=true;say('Toque no 🔊 para ouvir')}
+    if(st===1){started=true;if(/▶/.test(hint.textContent))hint.classList.remove('on')}
+    if(d&&d.info&&d.info.muted===true&&started)say('Toque no 🔊 para ouvir');
   }
   addEventListener('message',onMsg);
   fr.addEventListener('load',function(){try{fr.contentWindow.postMessage(JSON.stringify({event:'listening',id:1,channel:'widget'}),'*')}catch(x){}});
-  // se em 4 s não começou (navegador que bloqueia), pede o toque no play do próprio vídeo
-  setTimeout(function(){if(!started&&v.parentNode)say('Toque no ▶ para assistir')},4000);
+  // se em ~3 s não começou (navegador bloqueou o início automático), pede o toque no ▶
+  setTimeout(function(){if(!started&&v.parentNode)say('Toque no ▶ para assistir')},3000);
   v._off=function(){removeEventListener('message',onMsg)};
 }
 document.addEventListener('click',function(e){
