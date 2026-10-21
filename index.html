@@ -434,8 +434,13 @@ footer .law{font-size:12.5px;max-width:860px;line-height:1.6;border-top:1px soli
 @media(prefers-reduced-motion:reduce){.leadin .dn,.proof .thumb .pl{animation:none}}
 /* ===== VÍDEO NO PRÓPRIO LUGAR ===== */
 .vplayer{position:relative;width:100%;background:#000;aspect-ratio:9/12;overflow:hidden}
-.vplayer iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.vplayer::before{content:"";position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:3px solid #ffffff33;border-top-color:var(--lime);animation:vspin .9s linear infinite}
+@keyframes vspin{to{transform:rotate(360deg)}}
+.vplayer iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;z-index:1}
 .vplayer .vstop{position:absolute;top:10px;right:10px;z-index:3;width:36px;height:36px;border-radius:50%;background:#000c;color:#fff;border:1px solid #ffffff66;font-size:22px;line-height:1;display:grid;place-items:center;cursor:pointer;padding:0}
+.vplayer .vhint{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);z-index:4;white-space:nowrap;background:#0c1110ee;color:var(--lime);border:1px solid #c8f54288;border-radius:99px;padding:7px 14px;font:600 12.5px/1.2 var(--sans);text-align:center;pointer-events:none;opacity:0}
+.vplayer .vhint.on{animation:vhint 9s forwards}
+@keyframes vhint{0%,80%{opacity:1}100%{opacity:0;visibility:hidden}}
 .vplayer .vstop:hover{background:var(--lime);color:#0c1110}
 .proof .vplayer.pr{aspect-ratio:3/4;border-radius:18px}
 /* ===== DATA DE HOJE (muda sozinha todo dia) ===== */
@@ -1035,13 +1040,29 @@ rail.addEventListener('scroll',rupd,{passive:true});addEventListener('resize',ru
 // modal de vídeo
 var m=$('#modal'),f=$('iframe',m);
 // vídeo toca no próprio lugar da capa (sem abrir tela por cima)
-function stopVid(v){var o=v._orig;if(o&&v.parentNode){v.parentNode.replaceChild(o,v)}}
+function stopVid(v){var o=v._orig;if(v._off)v._off();if(o&&v.parentNode){v.parentNode.replaceChild(o,v)}}
 function playVid(b){
   $$('.vplayer').forEach(stopVid);
   var v=document.createElement('div');v._orig=b;
   v.className='vplayer'+(b.closest('.proof')?' pr':'');
-  v.innerHTML='<iframe src="https://www.youtube.com/embed/'+b.dataset.v+'?autoplay=1&rel=0&playsinline=1" title="Depoimento" allow="autoplay;encrypted-media;fullscreen;picture-in-picture" allowfullscreen></iframe>';
+  // celular (iPhone, Android e o navegador interno do Instagram/Facebook): o vídeo começa mudo, que é o que eles permitem tocar sozinho; a pessoa liga o som
+  var mob=/Android|iP(hone|ad|od)|Mobile/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1)||(window.matchMedia&&matchMedia('(pointer:coarse)').matches);
+  v.innerHTML='<iframe src="https://www.youtube.com/embed/'+b.dataset.v+'?autoplay=1&rel=0&playsinline=1&enablejsapi=1'+(mob?'&mute=1':'')+'" title="Depoimento" allow="autoplay;encrypted-media;fullscreen;picture-in-picture" allowfullscreen></iframe>'+(mob?'<p class="vhint"></p>':'');
   b.parentNode.replaceChild(v,b);
+  if(!mob)return;
+  var fr=v.querySelector('iframe'),hint=v.querySelector('.vhint'),started=false;
+  function say(t){if(!hint)return;hint.textContent=t;hint.classList.remove('on');void hint.offsetWidth;hint.classList.add('on')}
+  function onMsg(e){
+    if(e.source!==fr.contentWindow)return;
+    var d=e.data;if(typeof d==='string'){try{d=JSON.parse(d)}catch(x){return}}
+    var st=d&&(d.event==='onStateChange'?d.info:(d.info&&d.info.playerState));
+    if(st===1&&!started){started=true;say('Toque no 🔊 para ouvir')}
+  }
+  addEventListener('message',onMsg);
+  fr.addEventListener('load',function(){try{fr.contentWindow.postMessage(JSON.stringify({event:'listening',id:1,channel:'widget'}),'*')}catch(x){}});
+  // se em 4 s não começou (navegador que bloqueia), pede o toque no play do próprio vídeo
+  setTimeout(function(){if(!started&&v.parentNode)say('Toque no ▶ para assistir')},4000);
+  v._off=function(){removeEventListener('message',onMsg)};
 }
 document.addEventListener('click',function(e){
   var st=e.target.closest('.vstop');if(st){stopVid(st.closest('.vplayer'));return}
